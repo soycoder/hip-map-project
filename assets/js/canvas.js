@@ -3,8 +3,9 @@ canvas.addEventListener("keydown", doKeyMove, true);
 // document.body.appendChild("canvas_2");
 canvas_context = canvas.getContext("2d");
 canvas_context.fillRect(0, 0, 10, 10);
-drawMaps();
 drawingImage();
+drawMaps();
+
 var map_axis_x = 1056;
 var map_axis_y = 792;
 var map_x_channel = 100;

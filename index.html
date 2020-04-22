@@ -2,40 +2,91 @@
 <html lang="en">
   <head>
     <title>HIP : Project testing</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/canvas.css">
-  </head>
+    <!-- CSS File -->
+    <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- JS File -->
+                <!-- Auth - -->
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                <script src="assets/js/auth.js" ></script>
+
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script
+                  async
+                  src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
+                ></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag() {
+                    dataLayer.push(arguments);
+                  }
+                  gtag("js", new Date());
+
+                  gtag("config", "UA-162480253-2");
+                </script>
+    </head>
 
   <body>
+    <div class="container-fluid">
+      <div style="background-color: #f7b633;">
+        <div class="mx-auto" style="width: 600px; font-size: 30px;">
+          CS285: Human Information Processing
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">เข้าสู่ระบบ</h5>
+          <p class="card-text">ใช้รหัสผ่านด้วย TU-WIFI</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="InputStudentID">รหัสนักศึกษา</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="InputStudentID"
+                      aria-describedby="StudentIDHelp"
+                      required
+                    />
+                    <small id="StudentIDHelp" class="form-text text-muted"
+                      >ป้อนรหัสนักศึกษา</small
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="InputPassword1">รหัสผ่าน</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="InputPassword1"
+                      required
+                    />
+                  </div>
+                  </div>
+                  <button type="button" id="login" onclick="authentication()" class="btn btn-warning">
+                    เข้าสู่ระบบ
+                  </button>
+                </form>
+              </div>
+        </div>
+      <div class="col"></div>
+    </div>
     
-    <center>
-      <header>
-        <h2>CS285: Human Information Processing</h2>
-      </header>
-      <br/>
-
-      <form style="font-size: 24px;">
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" value="รหัสนักศึกษา" style="font-size: 20px;margin-bottom: 5px;"><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" value="รหัสผ่าน" style="font-size: 20px"><br><br>
-        <button><a href="information.html" style="font-size: 20px">Next</a></button>
-        <!-- <button><a href="information.html">Next</a></button> -->
-      </form> 
-    </center>
-   
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-162480253-2");
-    </script>
   </body>
 </html>

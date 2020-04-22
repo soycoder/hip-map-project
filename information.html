@@ -3,16 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experiment 1</title>
+    <title>Information</title>
     <!-- CSS File -->
     <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
-    <!-- JS File -->
-    <script src="assets/js/sound_play.js"></script>
-    <script src="assets/js/information.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+    <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+          <!-- JS File -->
+                      <!-- Auth - -->
+                      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+                      <script src="assets/js/auth.js" ></script>
+      
+                      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                      <!-- Global site tag (gtag.js) - Google Analytics -->
+                      <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
+                      ></script>
+                      <script>
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() {
+                          dataLayer.push(arguments);
+                        }
+                        gtag("js", new Date());
+      
+                        gtag("config", "UA-162480253-2");
+                      </script>
+          <!-- JS File -->
+          <script src="assets/js/sound_play.js"></script>
+          <script src="assets/js/information.js"></script>
   </head>
   <body >
-    <div align="center">
-      <p style="font-size: 30px;">คำอธิบาย : ให้...........................</p>
+    <div class="container-fluid">
+      <div style="background-color: #f7b633;">
+        <div class="mx-auto" style="width: 600px; font-size: 30px;">
+          CS285: Human Information Processing
+        </div>
+      </div>
+    </div>
+      <br />
+      <br />
+      <div class="container">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">คำอธิบาย</h5>
+            <p class="card-text">ให้...........................</p>
+          </div>
+        </div>
+      <p style="font-size: 30px;"> </p>
       <br />
       <p style="font-size: 24px;">ระบบสุ่ม 1 ใน 3</p>
       

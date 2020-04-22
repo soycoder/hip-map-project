@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "KrungthaiFast-Regular";
+  src: url("/assets/font/KrungthaiFast-Regular.ttf");
+}
+
+div {
+  font-family: "KrungthaiFast-Regular", sans-serif;
+}

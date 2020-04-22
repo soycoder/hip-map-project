@@ -18,7 +18,8 @@ function authentication() {
         localStorage.displayname_th = res.data.displayname_th;
         localStorage.displayname_en = res.data.displayname_en;
         localStorage.faculty = res.data.faculty;
-        location.replace("/information.html")
+        location.replace("hip-map-project/information.html")
+        // location.replace("information.html")
       }
     })
     .catch(function (err) {

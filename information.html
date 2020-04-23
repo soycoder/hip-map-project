@@ -8,87 +8,157 @@
     <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
     <!-- Bootstrap CSS -->
-          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    
-          <!-- JS File -->
-                      <!-- Auth - -->
-                      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-                      <script src="assets/js/auth.js" ></script>
-      
-                      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                      <!-- Global site tag (gtag.js) - Google Analytics -->
-                      <script
-                        async
-                        src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
-                      ></script>
-                      <script>
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag() {
-                          dataLayer.push(arguments);
-                        }
-                        gtag("js", new Date());
-      
-                        gtag("config", "UA-162480253-2");
-                      </script>
-          <!-- JS File -->
-          <script src="assets/js/sound_play.js"></script>
-          <script src="assets/js/information.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <!-- JS File -->
+    <!-- Auth - -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="assets/js/auth.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-162480253-2");
+    </script>
+    <!-- JS File -->
+    <script src="assets/js/sound_play.js"></script>
+    <script src="assets/js/information.js"></script>
   </head>
-  <body >
+  <body onload="profile()">
     <div class="container-fluid">
       <div style="background-color: #f7b633;">
-        <div class="mx-auto" style="width: 600px; font-size: 30px;">
+        <div class="mx-auto" style="width: 700px; font-size: 35px;">
           CS285: Human Information Processing
         </div>
       </div>
+      <span
+        id="profile1"
+        class="badge badge-pill badge-secondary"
+        style="font-size: 20px; float: right; margin-top: 5px;"
+      >
+      </span>
     </div>
-      <br />
-      <br />
-      <div class="container">
+    <br />
+    <br />
+
+    <div class="container">
+      <div id="explanation">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">คำอธิบาย</h5>
-            <p class="card-text">ให้...........................</p>
+            <h4 class="card-title">คำอธิบาย</h4>
+            <p class="card-text">
+              1. ให้ผู้ร่วมการทดลอง <b>จดจำเส้นทางการเดินทาง</b> จากจุดเริ่มต้น
+              ไปยังจุดเป้าหมาย
+              <br />2.
+              <br />3.
+              <br />4.
+            </p>
           </div>
         </div>
-      <p style="font-size: 30px;"> </p>
+        <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startinfo()">
+          เริ่ม จดจำเส้นทางการเดินทาง
+        </button>
+      </div>
       <br />
-      <p style="font-size: 24px;">ระบบสุ่ม 1 ใน 3</p>
+      <div id="info1" class="hidden">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="card">
+              <img
+                class="center"
+                src="/assets/img/info/hip-map-animate-FullHD.gif"
+                width="800px"
+              />
+              <div class="card-body">
+                <button
+                  type="button"
+                  id="login"
+                  onclick="goExperimentOne()"
+                  class="btn btn-warning btn-lg btn-block"
+                >
+                  ถัดไป
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <br />
+      <div id="info2" class="hidden">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <button
+                  onclick="playAudio('landmark')"
+                  style="font-size: 24px;"
+                >
+                  Play Audio
+                </button>
+                <button
+                  type="button"
+                  id="login"
+                  onclick="goExperimentOne()"
+                  class="btn btn-warning"
+                >
+                  ถัดไป
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <br />
+      <div id="info3" class="hidden">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <button
+                  onclick="playAudio('direction')"
+                  style="font-size: 24px;"
+                >
+                  Play Audio
+                </button>
+                <button
+                  type="button"
+                  id="login"
+                  onclick="goExperimentOne()"
+                  class="btn btn-warning"
+                >
+                  ถัดไป
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div id="timer" class="hidden" style="text-align: center;margin-top: 50px;font-size: 60px;color: #ee0f0f;">
+        <span id="countdowntimer" >5 </span>
+      </div>
       
-      <form style="background-color : darkgray;margin: 0px 200px 0px 200px; padding-top: 20px;padding-bottom: 20px;">
-        <h3>Group 1 :</h3>
-        <img
-          src="https://media.giphy.com/media/pVtulZdJsUuCQ/giphy.gif"
-          width="200px"
-        />
-      </form>
-      <br>
-      <form style="background-color : darkgray;margin: 0px 200px 0px 200px; padding-top: 20px;padding-bottom: 20px;">
-        <h3>Group 2 :</h3>
-        <button onclick="playAudio('landmark')" style="font-size: 24px;">Play Audio</button>
-      </form>
-
-      <br>
-      <div style="background-color : darkgray;margin: 0px 200px 0px 200px; padding-top: 20px;padding-bottom: 20px;">
-      
-        <h3>Group 3 :</h3>
-        <button onclick="playAudio('direction')" style="font-size: 24px;">Play Audio</button>
-      </div>
-      <br />
-      _____________________________________________________________
-      <br /> <br />
-      <div>
-        <button><a href="experiment_1.html" style="font-size: 24px;">Next page</a></button>
-      </div>
-      <br />
-      <div>
-        <button onclick="GetURLParameter('g')" style="font-size: 24px;">GetURLParameter</a></button>
-      </div>
     </div>
-
   </body>
-  
 </html>

@@ -36,7 +36,7 @@
   <body>
     <div class="container-fluid">
       <div style="background-color: #f7b633;">
-        <div class="mx-auto" style="width: 600px; font-size: 30px;">
+        <div class="mx-auto" style="width: 700px; font-size: 35px;">
           CS285: Human Information Processing
         </div>
       </div>
@@ -46,7 +46,7 @@
     <div class="container">
       <div class="card text-center">
         <div class="card-body">
-          <h5 class="card-title">เข้าสู่ระบบ</h5>
+          <h4 class="card-title">เข้าสู่ระบบ</h4>
           <p class="card-text">ใช้รหัสผ่านด้วย TU-WIFI</p>
         </div>
       </div>
@@ -57,29 +57,31 @@
               <div class="card-body">
                 <form>
                   <div class="form-group">
-                    <label for="InputStudentID">รหัสนักศึกษา</label>
+                    <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
                     <input
                       type="text"
                       class="form-control"
                       id="InputStudentID"
                       aria-describedby="StudentIDHelp"
                       required
+                      style="font-size: 18px;"
                     />
                     <small id="StudentIDHelp" class="form-text text-muted"
                       >ป้อนรหัสนักศึกษา</small
                     >
                   </div>
                   <div class="form-group">
-                    <label for="InputPassword1">รหัสผ่าน</label>
+                    <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
                     <input
                       type="password"
                       class="form-control"
                       id="InputPassword1"
                       required
+                      style="font-size: 18px;"
                     />
                   </div>
                   </div>
-                  <button type="button" id="login" onclick="authentication()" class="btn btn-warning">
+                  <button type="button" id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
                     เข้าสู่ระบบ
                   </button>
                 </form>

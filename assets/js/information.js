@@ -1,18 +1,40 @@
-
-
-function GetURLParameter(sParam)
-{
-    console.log(sParam);
-    
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            console.log(sParameterName[1]);
-            return sParameterName[1];
-        }
+var timeleft = 5;
+function getTimer(name) {
+  var downloadTimer = setInterval(function () {
+    timeleft--;
+    document.getElementById("timer").classList.remove("hidden");
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+      document.getElementById(name).classList.remove("hidden");
+      document.getElementById("timer").classList.add("hidden");
     }
-}​
+  }, 1000);
+}
+
+function startinfo() {
+  let digit = localStorage.stuID.charAt(8);
+  switch (digit % 3) {
+    case 1:
+      document.getElementById("explanation").classList.add("hidden");
+      getTimer("info1");
+
+      break;
+    case 2:
+      document.getElementById("explanation").classList.add("hidden");
+      getTimer("info2");
+
+      break;
+    case 2:
+      document.getElementById("explanation").classList.add("hidden");
+      getTimer("info3");
+
+      break;
+    default:
+      break;
+  }
+}
+function goExperimentOne() {
+    location.replace("experiment_1.html");
+}
+

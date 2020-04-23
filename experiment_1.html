@@ -6,32 +6,98 @@
     <title>Experiment 1</title>
     <!-- CSS File -->
     <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
-    <!-- JS File -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/js/canvas_experiment_1.js"></script>
-  </head>
-  <body onload="InitThis();">
+    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
 
-    <div align="center">
-      <p>Support on PC,Laptop (can press keyboard)</p>
-        <p><li>Press TAB to begin, W, A, S, D keys to move</li></p>
-      <img
-        class="hidden"
-        id="full_map_ex1"
-        src="assets/img/full_map_ex1.png"
-        alt="full_map_ex1.png"
-      />
-      <canvas width="1056" height="792" id="myCanvas_ex1" tabindex="0">
-        Experiment 1
-      </canvas>
-      <br /><br />
-      <button onclick="javascript:clearArea();return false;">
-        Clear Area
-      </button>
-      <button onclick="javascript:save();return false;">
-        <a href="experiment_2.html">Save</a> 
-      </button>
-      
+    <!-- JS File -->
+    <!-- Auth - -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="assets/js/auth.js"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-162480253-2");
+    </script>
+    <!-- JS File -->
+    <script src="assets/js/canvas_experiment_1.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </head>
+  <body onload="startEX1();">
+    <div class="container-fluid">
+      <div style="background-color: #f7b633;">
+        <div class="mx-auto" style="width: 700px; font-size: 35px;">
+          CS285: Human Information Processing
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div class="container-fluid hidden" id="ex1" >
+      <div class="row">
+        <div class="col-9">
+          <div id="canvas-ex1" class="center" style="max-width: 1000px;">
+            <img
+              class="hidden"
+              id="full_map_ex1"
+              src="assets/img/full_map_ex1.png"
+              alt="full_map_ex1.png"
+            />
+            <canvas width="900px" height="650px" id="myCanvas_ex1" tabindex="0">
+              Experiment 1
+            </canvas>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <button
+              onclick="clearArea();"
+              class="btn btn-secondary btn-lg btn-block"
+              style="margin-right: 20px; height: 200px;"
+            >
+              วาดใหม่
+            </button>
+          </div>
+          <div class="row">
+            <button
+              onclick="saveToImage();"
+              class="btn btn-warning btn-lg btn-block"
+              style="margin-right: 20px;"
+            >
+              ถัดไป
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="timer"
+      class="hidden"
+      style="
+        text-align: center;
+        margin-top: 50px;
+        font-size: 60px;
+        color: #ee0f0f;
+      "
+    >
+      <span id="countdowntimer">5 </span>
     </div>
   </body>
 </html>

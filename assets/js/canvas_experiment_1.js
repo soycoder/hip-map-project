@@ -2,6 +2,10 @@ var mousePressed = false;
 var lastX, lastY;
 var ctx;
 
+function startEX1() {
+  getTimer("ex1");
+  InitThis();
+}
 
 function InitThis() {
   ctx = document.getElementById("myCanvas_ex1").getContext("2d");
@@ -63,4 +67,23 @@ function convertCanvasToImage(canvas) {
   image.src = canvas.toDataURL("image/png");
   return image;
 }
+function saveToImage() {
+  goExperimentTwo();
+}
+function goExperimentTwo() {
+  location.replace("experiment_2.html");
+}
 
+var timeleft = 5;
+function getTimer(name) {
+  var downloadTimer = setInterval(function () {
+    timeleft--;
+    document.getElementById("timer").classList.remove("hidden");
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if (timeleft <= 0) {
+      clearInterval(downloadTimer);
+      document.getElementById(name).classList.remove("hidden");
+      document.getElementById("timer").classList.add("hidden");
+    }
+  }, 1000);
+}

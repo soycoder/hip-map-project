@@ -25,7 +25,7 @@ function startinfo() {
       getTimer("info2");
 
       break;
-    case 2:
+    case 3:
       document.getElementById("explanation").classList.add("hidden");
       getTimer("info3");
 

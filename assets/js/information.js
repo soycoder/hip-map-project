@@ -13,8 +13,8 @@ function getTimer(name) {
 }
 
 function startinfo() {
-  let digit = localStorage.stuID.charAt(8);
-  switch (digit % 3) {
+  var digit = localStorage.stuID.charAt(8);
+  switch (parseInt(digit) % 3) {
     case 1:
       document.getElementById("explanation").classList.add("hidden");
       getTimer("info1");

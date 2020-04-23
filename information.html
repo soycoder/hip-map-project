@@ -37,7 +37,6 @@
       gtag("config", "UA-162480253-2");
     </script>
     <!-- JS File -->
-    <script src="assets/js/sound_play.js"></script>
     <script src="assets/js/information.js"></script>
   </head>
   <body onload="profile()">
@@ -64,14 +63,15 @@
             <h4 class="card-title">คำอธิบาย</h4>
             <p class="card-text">
               1. ให้ผู้ร่วมการทดลอง <b>จดจำเส้นทางการเดินทาง</b> จากจุดเริ่มต้น
-              ไปยังจุดเป้าหมาย
-              <br />2.
-              <br />3.
-              <br />4.
+              ไปยังจุดเป้าหมาย <br />2. <br />3. <br />4.
             </p>
           </div>
         </div>
-        <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startinfo()">
+        <button
+          class="btn btn-warning btn-lg btn-block"
+          id="getInfo"
+          onclick="startinfo()"
+        >
           เริ่ม จดจำเส้นทางการเดินทาง
         </button>
       </div>
@@ -83,7 +83,7 @@
             <div class="card">
               <img
                 class="center"
-                src="https://github.com/soycoder/hip-map-project/blob/master/assets/img/info/hip-map-animate-FullHD.gif?raw=true"
+                src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-FullHD.gif"
                 width="800px"
               />
               <div class="card-body">
@@ -105,23 +105,35 @@
       <div id="info2" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-6">
+          <div class="col-10">
             <div class="card">
-              <div class="card-body">
-                <button
-                  onclick="playAudio('landmark')"
-                  style="font-size: 24px;"
-                >
-                  Play Audio
-                </button>
-                <button
-                  type="button"
-                  id="login"
-                  onclick="goExperimentOne()"
-                  class="btn btn-warning"
-                >
-                  ถัดไป
-                </button>
+              <img
+                src="assets/img/full_map_ex1.png"
+                width="900px"
+                class="center"
+              />
+              <div class="row">
+                <div class="col-9">
+                  <div class="card-body">
+                    <audio
+                      id="info_voice_landmark"
+                      class="center"
+                      src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_landmark.mp3"
+                      controls
+                    ></audio>
+                  </div>
+                </div>
+                <div class="col" >
+                  <button
+                    type="button"
+                    id="login"
+                    onclick="goExperimentOne()"
+                    class="btn btn-warning"
+                    style="margin-top: 22px"
+                  >
+                    ถัดไป
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -132,33 +144,53 @@
       <div id="info3" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-6">
+          <div class="col-10">
             <div class="card">
-              <div class="card-body">
-                <button
-                  onclick="playAudio('direction')"
-                  style="font-size: 24px;"
-                >
-                  Play Audio
-                </button>
-                <button
-                  type="button"
-                  id="login"
-                  onclick="goExperimentOne()"
-                  class="btn btn-warning"
-                >
-                  ถัดไป
-                </button>
+              <img
+                src="assets/img/full_map_ex1.png"
+                width="900px"
+                class="center"
+              />
+              <div class="row">
+                <div class="col-9">
+                  <div class="card-body">
+                    <audio
+                      id="info_voice_landmark"
+                      class="center"
+                      src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_direction.mp3"
+                      controls
+                    ></audio>
+                  </div>
+                </div>
+                <div class="col" >
+                  <button
+                    type="button"
+                    id="login"
+                    onclick="goExperimentOne()"
+                    class="btn btn-warning"
+                    style="margin-top: 22px"
+                  >
+                    ถัดไป
+                  </button>
+                </div>
               </div>
             </div>
           </div>
           <div class="col"></div>
         </div>
       </div>
-      <div id="timer" class="hidden" style="text-align: center;margin-top: 50px;font-size: 60px;color: #ee0f0f;">
-        <span id="countdowntimer" >5 </span>
+      <div
+        id="timer"
+        class="hidden"
+        style="
+          text-align: center;
+          margin-top: 50px;
+          font-size: 60px;
+          color: #ee0f0f;
+        "
+      >
+        <span id="countdowntimer">5 </span>
       </div>
-      
     </div>
   </body>
 </html>

@@ -42,7 +42,7 @@
   </head>
 
   <body onload="startEX2();">
-    <div class="container-fluid " id="banner">
+    <div class="container-fluid" id="banner">
       <div style="background-color: #f7b633;">
         <div class="mx-auto" style="width: 700px; font-size: 35px;">
           CS285: Human Information Processing
@@ -50,50 +50,61 @@
       </div>
     </div>
 
-    <div id="" class="center" style="max-width: 1056px;">
-      <img
-        class="hidden"
-        id="full-map"
-        src="assets/img/full_map.png"
-        alt="full_map.png"
-      />
-      <img
-        class="hidden"
-        id="AudiCar-A"
-        src="assets/img/Topdown_vehicle_sprites_pack/Audi_A.png"
-      />
-      <img
-        class="hidden"
-        id="AudiCar-S"
-        src="assets/img/Topdown_vehicle_sprites_pack/Audi_S.png"
-      />
-      <img
-        class="hidden"
-        id="AudiCar-W"
-        src="assets/img/Topdown_vehicle_sprites_pack/Audi_W.png"
-      />
-      <img
-        class="hidden"
-        id="AudiCar-D"
-        src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png"
-      />
-      <canvas class="hidden" width="1056px" height="792px" id="canvas_ex2" tabindex="0">
-        Canvas tag
-      </canvas>
-    </div>
     
-    <div
-      id="timer"
-      class="hidden"
-      style="
-        text-align: center;
-        margin-top: 50px;
-        font-size: 60px;
-        color: #ee0f0f;
-      "
-    >
-      <span id="countdowntimer">5 </span>
-    </div>
+      <div id="ex2" class="center">
+        <img
+          class="hidden"
+          id="full-map"
+          src="assets/img/full_map.png"
+          alt="full_map.png"
+        />
+        <img
+          class="hidden"
+          id="AudiCar-A"
+          src="assets/img/Topdown_vehicle_sprites_pack/Audi_A.png"
+        />
+        <img
+          class="hidden"
+          id="AudiCar-S"
+          src="assets/img/Topdown_vehicle_sprites_pack/Audi_S.png"
+        />
+        <img
+          class="hidden"
+          id="AudiCar-W"
+          src="assets/img/Topdown_vehicle_sprites_pack/Audi_W.png"
+        />
+        <img
+          class="hidden"
+          id="AudiCar-D"
+          src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png"
+        />
+        <div class="row">
+          <div class="col-8">
+            <canvas
+          class="hidden"
+          width="1056"
+          height="720"
+          id="canvas_ex2"
+          tabindex="0"
+        >
+          Canvas tag
+        </canvas></div>
+          <div class="col-4"></div>
+        
+      </div>
+
+      <div
+        id="timer"
+        class="hidden"
+        style="
+          text-align: center;
+          margin-top: 50px;
+          font-size: 60px;
+          color: #ee0f0f;
+        "
+      >
+        <span id="countdowntimer">5 </span>
+      </div>
 
     <script src="assets/js/canvas.js"></script>
   </body>

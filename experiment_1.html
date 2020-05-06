@@ -40,7 +40,7 @@
     <script src="assets/js/canvas_experiment_1.js"></script>
     <script src="assets/js/auth.js"></script>
   </head>
-  <body onload="startEX1();">
+  <body>
     <div class="container-fluid">
       <div style="background-color: #f7b633;">
         <div class="mx-auto" style="width: 700px; font-size: 35px;">
@@ -49,6 +49,30 @@
       </div>
     </div>
     <br />
+
+    <div class="container">
+      <div id="explanation_ex1">
+        <div class="card text-center">
+          <div class="card-body">
+            <h4 class="card-title">คำอธิบาย: การทดลองที่ 1</h4>
+            <p class="card-text">
+              ให้ผู้ร่วมการทดลอง ใช้<span style="color: #ee0f0f;">เมาส์</span> วงกลมสถานที่ ที่หายไป หรือ ย้ายตำแหน่ง จากแผนที่ ที่ให้จดจำเส้นทางในตอนเริ่มต้น
+              <li>หากต้องการแก้ไขกดปุ่ม วาดใหม่
+              <li>หากท่านคิดว่าวงกลมครบทุกจุดแล้ว กดปุ่ม ถัดไป
+              <li>หากท่านพร้อมแล้ว กดปุ่ม เริ่ม
+              <br />
+            </p>
+          </div>
+        </div>
+        <button
+          class="btn btn-warning btn-lg btn-block"
+          id="getInfo"
+          onclick="startEX1()"
+        >
+          เริ่ม การทดลอง
+        </button>
+      </div>
+    </div>
 
     <div class="container-fluid hidden" id="ex1" >
       <div class="row">
@@ -65,12 +89,13 @@
             </canvas>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col"></div>
+        <div class="col-2">
           <div class="row">
             <button
               onclick="clearArea();"
               class="btn btn-secondary btn-lg btn-block"
-              style="margin-right: 20px; height: 200px;"
+              style="margin-right: 20px;margin-bottom: 10px;"
             >
               วาดใหม่
             </button>

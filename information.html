@@ -56,7 +56,7 @@
     <br />
     <br />
 
-    <div class="container">
+    <div class="container" id="mainInfo">
       <div id="explanation">
         <div class="card text-center">
           <div class="card-body">
@@ -65,8 +65,8 @@
               1. เมื่อเริ่ม ระบบจะทำการสร้างแผนที่เมืองขึ้นมาโดยมีสถานที่ต่าง ๆ
               และถนน<br />
               2. ให้ผู้ร่วมการทดลอง
-              <span style="color: #ee0f0f;">จดจำเส้นทางตามการอธิบาย</span> (ภาพ
-              หรือ เสียง) จากจุดเริ่มต้น ไปจนถึงจุดปลายทาง ตามที่การอธิบาย
+              <span style="color: #ee0f0f;">จดจำเส้นทางตามการอธิบาย</span>
+              จากจุดเริ่มต้น(Start) ไปจนถึงจุดปลายทาง(Finish) ตามที่การอธิบาย
               ให้ได้มากที่สุด<br />
             </p>
           </div>
@@ -79,108 +79,109 @@
           เริ่ม จดจำเส้นทางการเดินทาง
         </button>
       </div>
-      <br />
-      <div id="info1" class="">
+      
+      <div id="info1" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
+          <div class="col-8">
             <div class="card">
               <img
+                id="img-info1"
                 class="center"
                 src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif"
                 width="800px"
               />
-              <div class="card-body">
-                <button
-                  type="button"
-                  id="login"
-                  onclick="goExperimentOne()"
-                  class="btn btn-warning btn-lg btn-block"
-                >
-                  ถัดไป
-                </button>
-              </div>
+              <!-- src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif" -->
+              <!-- https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png -->
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col-3">
+            <div id="CountDown-animate" class="hidden">
+              <label
+                  id="lebelCountDown-animate"
+                  class="btn-danger"
+                  style="margin-left: 15px;padding: 5px 10px;"
+                >
+                นับถอยหลัง 30 s
+              </lebel>
+            </div>
+          </div>
         </div>
       </div>
-      <br />
+      
       <div id="info2" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
+          <div class="col-9">
             <div class="card">
               <img
                 src="assets/img/full_map_ex1.png"
-                width="900px"
+                width="800px"
                 class="center"
               />
               <div class="row">
                 <div class="col-9">
-                  <div class="card-body">
+                  <div class="card-body" id="card-aud-land">
                     <audio
-                      id="info_voice_landmark"
+                      id="infoLandmark"
                       class="center"
                       src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_landmark.mp3"
                       controls
                     ></audio>
                   </div>
                 </div>
-                <div class="col">
-                  <button
-                    type="button"
-                    id="login"
-                    onclick="goExperimentOne()"
-                    class="btn btn-warning"
-                    style="margin-top: 22px;"
-                  >
-                    ถัดไป
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col">
+            <div id="CountDown-land" class="hidden">
+              <label
+                id="lebelCountDown-land"
+                class="btn-danger"
+                style="margin-top: 22px;padding: 5px 10px;"
+              >
+                นับถอยหลัง 30 s
+              </lebel>
+            </div>
+          </div>
         </div>
       </div>
-      <br />
+      
       <div id="info3" class="hidden">
         <div class="row">
           <div class="col"></div>
           <div class="col-10">
             <div class="card">
               <img
-                src="assets/img/full_map_ex1.png"
-                width="900px"
+                src="assets/img/full_map_ex1_di.png"
+                width="800px"
                 class="center"
               />
               <div class="row">
                 <div class="col-9">
-                  <div class="card-body">
+                  <div class="card-body" id="card-aud-di">
                     <audio
-                      id="info_voice_landmark"
+                      id="infoDirection"
                       class="center"
                       src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_direction.mp3"
                       controls
                     ></audio>
                   </div>
                 </div>
-                <div class="col">
-                  <button
-                    type="button"
-                    id="login"
-                    onclick="goExperimentOne()"
-                    class="btn btn-warning"
-                    style="margin-top: 22px;"
-                  >
-                    ถัดไป
-                  </button>
-                </div>
               </div>
             </div>
           </div>
-          <div class="col"></div>
+          <div class="col">
+            <div id="CountDown-di" class="hidden">
+              <label
+                id="lebelCountDown-di"
+                class="btn-danger"
+                style="margin-top: 22px;padding: 5px 10px;"
+              >
+                นับถอยหลัง 30 s
+              </lebel>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -196,5 +197,58 @@
         <span id="countdowntimer">5 </span>
       </div>
     </div>
+    <script type="text/javascript">
+      // Card
+      var cardLand = document.getElementById("card-aud-land");
+      var cardDi = document.getElementById("card-aud-di");
+
+      // Audio
+      var audLand = document.getElementById("infoLandmark");
+      var audDi = document.getElementById("infoDirection");
+
+      // Animate
+      // var animate = document.getElementById("info");
+      
+
+      audLand.addEventListener("play", function () {
+        localStorage.infoStart = Date();
+        cardLand.classList.add("hidden");
+      });
+      audDi.addEventListener("play", function () {
+        localStorage.infoStart = Date();
+        cardDi.classList.add("hidden");
+      });
+
+      audLand.addEventListener("ended", function () {
+
+        document.getElementById("CountDown-land").classList.remove("hidden");
+        countDownGotoNext("CountDown-land");
+      });
+      audDi.addEventListener("ended", function () {
+
+        document.getElementById("CountDown-di").classList.remove("hidden");
+        countDownGotoNext("CountDown-di");
+      });
+
+      function countDownGotoNext(lebelid) {
+        if(lebelid = "CountDown-animate")
+          document.getElementById("img-info1").src =
+          "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png ";
+        var ntimeleft2 = 30;
+        document.getElementById(lebelid).classList.remove("hidden");
+        var downloadTimer2 = setInterval(function () {
+        ntimeleft2--;
+        console.log(ntimeleft2);
+          
+        document.getElementById("lebel"+lebelid).textContent = "นับถอยหลัง "+ ntimeleft2 +" s";
+          if (ntimeleft2 <= 0) {
+            clearInterval(downloadTimer2);
+            localStorage.infoFinish = Date();
+            goExperimentOne();
+          }
+        }, 1000);
+      }
+      
+    </script>
   </body>
 </html>

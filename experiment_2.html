@@ -1,111 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experiment 2</title>
-    <!-- CSS File -->
-    <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
 
-    <!-- JS File -->
-    <!-- Auth - -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <script src="assets/js/auth.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiment 2</title>
+  <!-- CSS File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    
+  <!-- JS File -->
+  <!-- Axios - -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/482608b616.js" ></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "UA-162480253-2");
-    </script>
-    <!-- JS File -->
-    <script src="assets/js/canvas_experiment_1.js"></script>
-    <script src="assets/js/auth.js"></script>
-  </head>
+    gtag("config", "UA-162480253-2");
+  </script>
 
-  <body onload="startEX2();">
-    <div class="container-fluid" id="banner">
-      <div style="background-color: #f7b633;">
-        <div class="mx-auto" style="width: 700px; font-size: 35px;">
-          CS285: Human Information Processing
-        </div>
+</head>
+
+<body>
+  <div class="container-fluid" id="banner">
+    <div style="background-color: #f7b633;">
+      <div class="mx-auto" style="width: 700px; font-size: 35px;">
+        CS285: Human Information Processing
       </div>
     </div>
+  </div>
 
-    
-      <div id="ex2" class="center">
-        <img
-          class="hidden"
-          id="full-map"
-          src="assets/img/full_map.png"
-          alt="full_map.png"
-        />
-        <img
-          class="hidden"
-          id="AudiCar-A"
-          src="assets/img/Topdown_vehicle_sprites_pack/Audi_A.png"
-        />
-        <img
-          class="hidden"
-          id="AudiCar-S"
-          src="assets/img/Topdown_vehicle_sprites_pack/Audi_S.png"
-        />
-        <img
-          class="hidden"
-          id="AudiCar-W"
-          src="assets/img/Topdown_vehicle_sprites_pack/Audi_W.png"
-        />
-        <img
-          class="hidden"
-          id="AudiCar-D"
-          src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png"
-        />
-        <div class="row">
-          <div class="col-8">
-            <canvas
-          class="hidden"
-          width="1056"
-          height="720"
-          id="canvas_ex2"
-          tabindex="0"
-        >
-          Canvas tag
-        </canvas></div>
-          <div class="col-4"></div>
-        
+  <div class="container" id="mainEX2">
+    <div id="explanation_ex2">
+      <div class="card text-center">
+        <div class="card-body">
+          <h4 class="card-title">คำอธิบาย: การทดลองที่ 2</h4>
+          <p class="card-text">
+            ให้ผู้ร่วมการทดลอง กดปุ่มบน<span style="color: #ee0f0f;">คีย์บอร์ด W A S D</span> ในการบังคับรถยนต์
+            เพื่อเดินตามเส้นทางที่ท่านได้จดจำเมื่อเริ่มการทดลอง
+            <li>หากท่านคิดว่าได้เดินทางมาถึงเป้าหมายแล้ว (โดยใช้เส้นทางเดินเดียวกับตอนอธิบาย) กดปุ่ม ถัดไป
+            <li>หากท่านต้องการเริ่มเดินทางใหม่ กดปุ่ม เริ่มใหม่
+            <li>หากท่านพร้อมแล้ว กดปุ่ม เริ่ม
+
+          </p>
+        </div>
       </div>
+      <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startEX2()">
+        เริ่ม การทดลอง
+      </button>
+    </div>
 
-      <div
-        id="timer"
-        class="hidden"
-        style="
+
+    <div id="ex2" class="hidden">
+      <img class="hidden" id="full-map" src="assets/img/full_map_di.png" alt="full_map_di.png" width="1000"
+        height="720" />
+      <img class="hidden" id="AudiCar-A" src="assets/img/Topdown_vehicle_sprites_pack/Audi_A.png" />
+      <img class="hidden" id="AudiCar-S" src="assets/img/Topdown_vehicle_sprites_pack/Audi_S.png" />
+      <img class="hidden" id="AudiCar-W" src="assets/img/Topdown_vehicle_sprites_pack/Audi_W.png" />
+      <img class="hidden" id="AudiCar-D" src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png" />
+      <div class="row container">
+        <div class="col-1"></div>
+        <div class="col-8">
+          <canvas width="1000" height="720" id="canvas_ex2" tabindex="0">
+            Canvas tag
+          </canvas></div>
+        <div class="col-2"></div>
+
+      </div>
+      <div class="container">
+        <button class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#myModal" onclick="saveData()">
+          ถึง จุดหมายแล้ว
+        </button>
+      </div>
+    </div>
+    <div id="timer" class="hidden" style="
           text-align: center;
           margin-top: 50px;
           font-size: 60px;
           color: #ee0f0f;
-        "
-      >
-        <span id="countdowntimer">5 </span>
+        ">
+      <span id="countdowntimer">5 </span>
+    </div>
+    
+    <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h3 class="modal-title">สถานะการบันทึกข้อมูล</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body center" id="mymodal-body">
+          <div class="spinner-border text-warning center" style="width: 5rem; height: 5rem;font-size: 20px;" role="status">
+          </div>
+          <br/>
+          <span style="font-size: 20px">กำลังบันทึกข้อมูล...</span>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer center hidden" id="mymodal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-close">Close</button>
+        </div>
+        
       </div>
+    </div>
+  </div>
 
     <script src="assets/js/canvas.js"></script>
-  </body>
+    <script>
+      const SHEET_ID = '1N5vTNBHISUPBwPAk7V3r_lAZOgg580Va1UmWx_VYx2s';
+      const RANGE = 'Sheet1!A:E';
+      
+      async function saveDataToSheet() {
+        var Access_token = await getAccessToken();
+        let access_token = Access_token.data.access_token
+        // console.log(access_token);
+        let data = {
+          "values": [
+            [
+              localStorage.getItem("stuID"),
+              localStorage.getItem("type"),
+              localStorage.getItem("faculty"),
+              localStorage.getItem("displayname_th"),
+              localStorage.getItem("displayname_en"),
+              localStorage.getItem("group"),
+              localStorage.getItem("infoStart"),
+              localStorage.getItem("infoFinish"),
+              localStorage.getItem("startExperiment1"),
+              localStorage.getItem("finishExperiment1"),
+              // localStorage.getItem("url"),
+              "http://",
+              localStorage.getItem("startExperiment2"),
+              localStorage.getItem("finishExperiment2"),
+              localStorage.getItem("result")
+            ],
+          ],
+        };
+
+        document.getElementById("mymodal-body").innerHTML = ` 
+          <div class="text-success center">
+            <i class="fas fa-check-circle fa-5x"></i>
+          </div>
+          <br/>
+          <span class="center" style="font-size: 20px">บันทึกสำเร็จ</span>
+          `;
+        document.getElementById("mymodal-footer").classList.remove("hidden");
+        // Send a POST request
+        axios({
+          method: 'post',
+          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}:append`,
+          params: {
+            includeValuesInResponse: true,
+            valueInputOption: "RAW",
+            insertDataOption: "INSERT_ROWS"
+          },
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+          data,
+        });
+      }
+      
+      document.getElementById("btn-close").addEventListener("click", function(){
+        location.replace("thank.html");
+      });
+      
+
+      async function getAccessToken() {
+        let res = await  axios.get('https://gsheet-api.herokuapp.com/api');
+        // console.log(res);
+        return res;
+      }
+    </script>
+    
+</body>
+
 </html>

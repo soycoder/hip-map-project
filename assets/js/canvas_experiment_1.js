@@ -5,6 +5,7 @@ var ctx;
 function startEX1() {
   getTimer("ex1");
   InitThis();
+  localStorage.startExperiment1 = Date();
 }
 
 function InitThis() {
@@ -71,11 +72,14 @@ function saveToImage() {
   goExperimentTwo();
 }
 function goExperimentTwo() {
+  localStorage.finishExperiment1 = Date();
   location.replace("experiment_2.html");
 }
 
 var timeleft = 5;
+
 function getTimer(name) {
+  document.getElementById("explanation_ex1").classList.add("hidden");
   var downloadTimer = setInterval(function () {
     timeleft--;
     document.getElementById("timer").classList.remove("hidden");

@@ -38,7 +38,7 @@
     </script>
     <!-- JS File -->
     <script src="assets/js/canvas_experiment_1.js"></script>
-    <script src="assets/js/auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -95,7 +95,7 @@
             <button
               onclick="clearArea();"
               class="btn btn-secondary btn-lg btn-block"
-              style="margin-right: 20px;margin-bottom: 10px;"
+              style="margin-right: 20px;margin: 5px;"
             >
               วาดใหม่
             </button>
@@ -104,11 +104,23 @@
             <button
               onclick="saveToImage();"
               class="btn btn-warning btn-lg btn-block"
-              style="margin-right: 20px;"
+              style="margin-right: 20px;margin: 5px;"
             >
               ถัดไป
             </button>
           </div>
+
+          <!-- test -->
+          <div class="row">
+            <button
+              id="btnSave"
+              class="btn btn-danger btn-lg btn-block"
+              style="margin-right: 20px;margin: 5px;"
+            >
+              บันทึก
+            </button>
+          </div>
+          <!--  -->
         </div>
       </div>
     </div>
@@ -124,5 +136,25 @@
     >
       <span id="countdowntimer">5 </span>
     </div>
+    <div id="img-out"></div>
+    <script> 
+    $(function() { 
+    $("#btnSave").click(function() { 
+        html2canvas($("#myCanvas_ex1"), {
+            onrendered: function(canvas) {
+                theCanvas = canvas;
+                document.body.appendChild(canvas);
+                // Convert and download as image 
+                // Canvas2Image.saveAsPNG(canvas); 
+                $("#img-out").append(canvas);
+                console.log(canvas.toDataURL());
+                sessionStorage.setItem("base64canvas",canvas.toDataURL());
+                // Clean up 
+                //document.body.removeChild(canvas);
+            }
+        });
+    });
+}); 
+    </script>
   </body>
 </html>

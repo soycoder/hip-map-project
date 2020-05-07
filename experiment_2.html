@@ -125,34 +125,31 @@
 
     <script src="assets/js/canvas.js"></script>
     <script>
-      const SHEET_ID = '1N5vTNBHISUPBwPAk7V3r_lAZOgg580Va1UmWx_VYx2s';
-      const RANGE = 'Sheet1!A:E';
-      
-      async function saveDataToSheet() {
-        var Access_token = await getAccessToken();
-        let access_token = Access_token.data.access_token
-        // console.log(access_token);
+      function saveDataToSheet() {
+        // let img1 = sessionStorage.getItem("base64canvas").substring(0,parseInt(sessionStorage.getItem("base64canvas").length/2));
+        // let img2 = sessionStorage.getItem("base64canvas").substring(parseInt(sessionStorage.getItem("base64canvas").length/2),parseInt(sessionStorage.getItem("base64canvas").length));
         let data = {
-          "values": [
-            [
-              localStorage.getItem("stuID"),
-              localStorage.getItem("type"),
-              localStorage.getItem("faculty"),
-              localStorage.getItem("displayname_th"),
-              localStorage.getItem("displayname_en"),
-              localStorage.getItem("group"),
-              localStorage.getItem("infoStart"),
-              localStorage.getItem("infoFinish"),
-              localStorage.getItem("startExperiment1"),
-              localStorage.getItem("finishExperiment1"),
-              // localStorage.getItem("url"),
-              "http://",
-              localStorage.getItem("startExperiment2"),
-              localStorage.getItem("finishExperiment2"),
-              localStorage.getItem("result")
-            ],
-          ],
+             "stuID" : localStorage.getItem("stuID"),
+             "type" : localStorage.getItem("type"),
+             "faculty" : localStorage.getItem("faculty"),
+             "displayname_th" : localStorage.getItem("displayname_th"),
+             "displayname_en" : localStorage.getItem("displayname_en"),
+             "group" : localStorage.getItem("group"),
+             "infoStart" : localStorage.getItem("infoStart"),
+             "infoFinish" :  localStorage.getItem("infoFinish"),
+             "startExperiment1" : localStorage.getItem("startExperiment1"),
+             "finishExperiment1" : localStorage.getItem("finishExperiment1"),
+             "startExperiment2" : localStorage.getItem("startExperiment2"),
+             "finishExperiment2" : localStorage.getItem("finishExperiment2"),
+             "result" : localStorage.getItem("result")
         };
+
+        // Send a POST request
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/api',
+          data,
+        });
 
         document.getElementById("mymodal-body").innerHTML = ` 
           <div class="text-success center">
@@ -162,32 +159,12 @@
           <span class="center" style="font-size: 20px">บันทึกสำเร็จ</span>
           `;
         document.getElementById("mymodal-footer").classList.remove("hidden");
-        // Send a POST request
-        axios({
-          method: 'post',
-          url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}:append`,
-          params: {
-            includeValuesInResponse: true,
-            valueInputOption: "RAW",
-            insertDataOption: "INSERT_ROWS"
-          },
-          headers: {
-            Authorization: `Bearer ${access_token}`,
-          },
-          data,
-        });
       }
       
       document.getElementById("btn-close").addEventListener("click", function(){
         location.replace("thank.html");
       });
       
-
-      async function getAccessToken() {
-        let res = await  axios.get('https://gsheet-api.herokuapp.com/api');
-        // console.log(res);
-        return res;
-      }
     </script>
     
 </body>

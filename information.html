@@ -112,7 +112,7 @@
       <div id="info2" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-9">
+          <div class="col-8">
             <div class="card">
               <img
                 src="assets/img/full_map_ex1.png"
@@ -120,7 +120,7 @@
                 class="center"
               />
               <div class="row">
-                <div class="col-9">
+                <div class="col">
                   <div class="card-body" id="card-aud-land">
                     <audio
                       id="infoLandmark"
@@ -133,7 +133,7 @@
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-3">
             <div id="CountDown-land" class="hidden">
               <label
                 id="lebelCountDown-land"
@@ -150,7 +150,7 @@
       <div id="info3" class="hidden">
         <div class="row">
           <div class="col"></div>
-          <div class="col-10">
+          <div class="col-8">
             <div class="card">
               <img
                 src="assets/img/full_map_ex1_di.png"
@@ -158,7 +158,7 @@
                 class="center"
               />
               <div class="row">
-                <div class="col-9">
+                <div class="col">
                   <div class="card-body" id="card-aud-di">
                     <audio
                       id="infoDirection"
@@ -171,7 +171,7 @@
               </div>
             </div>
           </div>
-          <div class="col">
+          <div class="col-3">
             <div id="CountDown-di" class="hidden">
               <label
                 id="lebelCountDown-di"
@@ -231,16 +231,14 @@
       });
 
       function countDownGotoNext(lebelid) {
-        if(lebelid = "CountDown-animate")
-          document.getElementById("img-info1").src =
-          "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png ";
+
         var ntimeleft2 = 30;
         document.getElementById(lebelid).classList.remove("hidden");
         var downloadTimer2 = setInterval(function () {
         ntimeleft2--;
-        console.log(ntimeleft2);
+        // console.log(ntimeleft2);
           
-        document.getElementById("lebel"+lebelid).textContent = "นับถอยหลัง "+ ntimeleft2 +" s";
+        document.getElementById("lebel"+lebelid).textContent = `นับถอยหลัง ${ntimeleft2} s ไปหน้าถัดไป.`;
           if (ntimeleft2 <= 0) {
             clearInterval(downloadTimer2);
             localStorage.infoFinish = Date();

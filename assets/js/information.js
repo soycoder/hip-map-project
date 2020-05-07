@@ -21,13 +21,15 @@ function getTimer(name) {
 }
 
 function countDownInfo1() {
-  let ntimeleft2 = 44;
-  
+  let ntimeleft2 = 43;
+
   var downloadTimer3 = setInterval(function () {
     ntimeleft2--;
-    
+
     if (ntimeleft2 <= 0) {
       clearInterval(downloadTimer3);
+      document.getElementById("img-info1").src =
+        "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png ";
       countDownGotoNext("CountDown-animate");
     }
   }, 1000);
@@ -35,7 +37,7 @@ function countDownInfo1() {
 
 function startinfo() {
   var digit = localStorage.stuID.charAt(8);
-  
+
   switch (parseInt(digit) % 3) {
     case 0:
       document.getElementById("explanation").classList.add("hidden");
@@ -57,7 +59,6 @@ function startinfo() {
   }
   document.getElementById("mainInfo").classList.remove("container");
   document.getElementById("mainInfo").classList.remove("container-fluid");
-
 }
 function goExperimentOne() {
   location.replace("experiment_1.html");

@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    
+
   <!-- JS File -->
   <!-- Axios - -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -19,7 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/482608b616.js" ></script>
+  <script src="https://kit.fontawesome.com/482608b616.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script>
   <script>
@@ -81,7 +81,8 @@
 
       </div>
       <div class="container">
-        <button class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#myModal" onclick="saveData()">
+        <button class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#myModal"
+          onclick="saveData()">
           ถึง จุดหมายแล้ว
         </button>
       </div>
@@ -94,34 +95,36 @@
         ">
       <span id="countdowntimer">5 </span>
     </div>
-    
+
     <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h3 class="modal-title">สถานะการบันทึกข้อมูล</h3>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body center" id="mymodal-body">
-          <div class="spinner-border text-warning center" style="width: 5rem; height: 5rem;font-size: 20px;" role="status">
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h3 class="modal-title">สถานะการบันทึกข้อมูล</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <br/>
-          <span style="font-size: 20px">กำลังบันทึกข้อมูล...</span>
+
+          <!-- Modal body -->
+          <div class="modal-body center" id="mymodal-body">
+            <div class="spinner-border text-warning center" style="width: 5rem; height: 5rem;font-size: 20px;"
+              role="status">
+            </div>
+            <br />
+            <span style="font-size: 20px">กำลังบันทึกข้อมูล...</span>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="hidden" id="footer">
+            <div class="modal-footer center " id="mymodal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-close">เสร็จสิ้น</button>
+            </div>
+          </div>
         </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer center hidden" id="mymodal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-close">Close</button>
-        </div>
-        
       </div>
     </div>
-  </div>
 
     <script src="assets/js/canvas.js"></script>
     <script>
@@ -129,44 +132,54 @@
         // let img1 = sessionStorage.getItem("base64canvas").substring(0,parseInt(sessionStorage.getItem("base64canvas").length/2));
         // let img2 = sessionStorage.getItem("base64canvas").substring(parseInt(sessionStorage.getItem("base64canvas").length/2),parseInt(sessionStorage.getItem("base64canvas").length));
         let data = {
-             "stuID" : localStorage.getItem("stuID"),
-             "type" : localStorage.getItem("type"),
-             "faculty" : localStorage.getItem("faculty"),
-             "displayname_th" : localStorage.getItem("displayname_th"),
-             "displayname_en" : localStorage.getItem("displayname_en"),
-             "group" : localStorage.getItem("group"),
-             "infoStart" : localStorage.getItem("infoStart"),
-             "infoFinish" :  localStorage.getItem("infoFinish"),
-             "startExperiment1" : localStorage.getItem("startExperiment1"),
-             "finishExperiment1" : localStorage.getItem("finishExperiment1"),
-             "startExperiment2" : localStorage.getItem("startExperiment2"),
-             "finishExperiment2" : localStorage.getItem("finishExperiment2"),
-             "result" : localStorage.getItem("result")
+          "stuID": localStorage.getItem("stuID"),
+          "type": localStorage.getItem("type"),
+          "faculty": localStorage.getItem("faculty"),
+          "displayname_th": localStorage.getItem("displayname_th"),
+          "displayname_en": localStorage.getItem("displayname_en"),
+          "group": localStorage.getItem("group"),
+          "infoStart": localStorage.getItem("infoStart"),
+          "infoFinish": localStorage.getItem("infoFinish"),
+          "startExperiment1": localStorage.getItem("startExperiment1"),
+          "finishExperiment1": localStorage.getItem("finishExperiment1"),
+          "startExperiment2": localStorage.getItem("startExperiment2"),
+          "finishExperiment2": localStorage.getItem("finishExperiment2"),
+          "result": localStorage.getItem("result")
         };
 
         // Send a POST request
-        axios({
-          method: 'post',
-          url: 'https://gsheet-api.herokuapp.com/api',
-          data,
-        });
+        function axiosTest() {
+          return axios({
+            method: 'post',
+            url: 'https://gsheet-api.herokuapp.com/api',
+            data,
+          }).then(response => {
+            return response.data
+          })
+        }
 
-        document.getElementById("mymodal-body").innerHTML = ` 
+        axiosTest().then(data => {
+          console.log(data);
+
+          if (data.success === true) {
+            document.getElementById("mymodal-body").innerHTML = ` 
           <div class="text-success center">
             <i class="fas fa-check-circle fa-5x"></i>
           </div>
           <br/>
           <span class="center" style="font-size: 20px">บันทึกสำเร็จ</span>
           `;
-        document.getElementById("mymodal-footer").classList.remove("hidden");
+            document.getElementById("footer").classList.remove("hidden");
+          }
+        })
       }
-      
-      document.getElementById("btn-close").addEventListener("click", function(){
+
+      document.getElementById("btn-close").addEventListener("click", function () {
         location.replace("thank.html");
       });
-      
+
     </script>
-    
+
 </body>
 
 </html>

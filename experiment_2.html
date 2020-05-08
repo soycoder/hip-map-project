@@ -49,13 +49,17 @@
         <div class="card-body">
           <h4 class="card-title">คำอธิบาย: การทดลองที่ 2</h4>
           <p class="card-text">
-            ให้ผู้ร่วมการทดลอง กดปุ่มบน<span style="color: #ee0f0f;">คีย์บอร์ด W A S D</span> ในการบังคับรถยนต์
-            เพื่อเดินตามเส้นทางที่ท่านได้จดจำเมื่อเริ่มการทดลอง
-            <li>หากท่านคิดว่าได้เดินทางมาถึงเป้าหมายแล้ว (โดยใช้เส้นทางเดินเดียวกับตอนอธิบาย) กดปุ่ม ถัดไป
-            <li>หากท่านต้องการเริ่มเดินทางใหม่ กดปุ่ม เริ่มใหม่
-            <li>หากท่านพร้อมแล้ว กดปุ่ม เริ่ม
+            <pre
+              style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
+            1. ให้ผู้ร่วมการทดลอง กดปุ่มบน<span style="color: #ee0f0f;">คีย์บอร์ด W A S D</span> <img src="/assets/img/expain/pic-keyboard.png" height="60px" /> ในการบังคับรถยนต์ เพื่อ<b>เดินตามเส้นทาง</b> ที่ท่านได้จดจำเมื่อเริ่มการทดลอง
+                          <img src="/assets/img/expain/ex2-play.gif" height="280px" />
 
-          </p>
+              หากท่านคิดว่าได้ <b>เดินทางมาถึงเป้าหมายแล้ว</b> (โดยใช้เส้นทางเดินเดียวกับตอนอธิบาย) กดปุ่ม ถึง จุดหมายแล้ว <span class="btn btn-warning">ถึง จุดหมายแล้ว</span>
+              
+              <b style="color: #ee0f0f;">*หมายเหตุ* </b> แรกเริ่ม ผู้ร่วมการทดลอง ต้องปฏิบัติ ตามรูป
+                          <img src="/assets/img/expain/ex2-init.gif" height="280px" />
+            </pre>
+            </>
         </div>
       </div>
       <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startEX2()">
@@ -128,6 +132,31 @@
 
     <script src="assets/js/canvas.js"></script>
     <script>
+
+      var dataImg = {};
+      base64ToJSON();
+      function base64ToJSON() {
+        let len = sessionStorage.getItem("base64canvas").length;
+        let col = parseInt((len / 45000)) + 1;
+        let dataOut = {};
+        dataOut['stuID'] = localStorage.getItem("stuID");
+        for (let i = 0; i < col; i++) {
+          let img = '';
+          if (i == col) {
+            img = sessionStorage.getItem("base64canvas").substring(i * 45000,len);
+          }
+          else { img = sessionStorage.getItem("base64canvas").substring(i * 45000, (i + 1) * 45000); }
+
+          let c = i + 1
+          dataOut[c.toString()] = img;
+          // console.log(c,img.length);
+          
+        }
+        dataImg = dataOut;
+      }
+
+
+
       function saveDataToSheet() {
         // let img1 = sessionStorage.getItem("base64canvas").substring(0,parseInt(sessionStorage.getItem("base64canvas").length/2));
         // let img2 = sessionStorage.getItem("base64canvas").substring(parseInt(sessionStorage.getItem("base64canvas").length/2),parseInt(sessionStorage.getItem("base64canvas").length));
@@ -147,30 +176,46 @@
           "result": localStorage.getItem("result")
         };
 
+        
+
         // Send a POST request
-        function axiosTest() {
+        function axiosSendToapiResult() {
           return axios({
             method: 'post',
-            url: 'https://gsheet-api.herokuapp.com/api',
+            url: 'https://gsheet-api.herokuapp.com/api/result',
             data,
           }).then(response => {
             return response.data
           })
         }
 
-        axiosTest().then(data => {
-          console.log(data);
+        function axiosSendToapiImage() {
+          return axios({
+            method: 'post',
+            url: 'https://gsheet-api.herokuapp.com/api/image',
+            data : dataImg,
+            
+          }).then(response => {
+            return response.data
+          })
+        }
 
-          if (data.success === true) {
-            document.getElementById("mymodal-body").innerHTML = ` 
-          <div class="text-success center">
-            <i class="fas fa-check-circle fa-5x"></i>
-          </div>
-          <br/>
-          <span class="center" style="font-size: 20px">บันทึกสำเร็จ</span>
-          `;
-            document.getElementById("footer").classList.remove("hidden");
-          }
+        axiosSendToapiResult().then(resResult => {
+          axiosSendToapiImage().then(resImage => {
+            console.log(resImage);
+
+            if (resResult.success === true && resImage.success === true) {
+              document.getElementById("mymodal-body").innerHTML = ` 
+                <div class="text-success center">
+                  <i class="fas fa-check-circle fa-5x"></i>
+                </div>
+                <br/>
+                <span class="center" style="font-size: 20px">บันทึกสำเร็จ</span>
+                `;
+              document.getElementById("footer").classList.remove("hidden");
+            }
+          })
+
         })
       }
 

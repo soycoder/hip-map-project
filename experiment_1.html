@@ -56,11 +56,13 @@
           <div class="card-body">
             <h4 class="card-title">คำอธิบาย: การทดลองที่ 1</h4>
             <p class="card-text">
-              ให้ผู้ร่วมการทดลอง ใช้<span style="color: #ee0f0f;">เมาส์</span> วงกลมสถานที่ ที่หายไป หรือ ย้ายตำแหน่ง จากแผนที่ ที่ให้จดจำเส้นทางในตอนเริ่มต้น
-              <li>หากต้องการแก้ไขกดปุ่ม วาดใหม่
-              <li>หากท่านคิดว่าวงกลมครบทุกจุดแล้ว กดปุ่ม ถัดไป
-              <li>หากท่านพร้อมแล้ว กดปุ่ม เริ่ม
-              <br />
+              <pre style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
+              1. ให้ผู้ร่วมการทดลอง ใช้<b><span style="color: #ee0f0f;">เมาส์</span></b> <b>วงกลม</b> สถานที่ ที่หายไป หรือ ย้ายตำแหน่ง จากแผนที่ ที่ให้จดจำเส้นทางในตอนเริ่มต้น
+                  หากท่านคิดว่า <b>วงกลมครบทุกจุด</b> แล้ว กดปุ่ม ถัดไป <span class="btn btn-warning "style="margin-right: 20px;margin: 5px;"> ถัดไป </span>   
+                              <img src="/assets/img/expain/ex1-draw.gif" height="280px" />
+
+                  หาก <b>ต้องการแก้ไข</b> กดปุ่ม วาดใหม่ <span class="btn btn-secondary "style="margin-right: 20px;"> วาดใหม่ </span>
+                              <img src="/assets/img/expain/ex1-re.gif" height="280px" /></pre>
             </p>
           </div>
         </div>
@@ -81,7 +83,7 @@
             <img
               class="hidden"
               id="full_map_ex1"
-              src="assets/img/full_map_ex1.png"
+              src="assets/img/full_map_ex1_di.png"
               alt="full_map_ex1.png"
             />
             <canvas width="900px" height="650px" id="myCanvas_ex1" tabindex="0">
@@ -103,24 +105,13 @@
           <div class="row">
             <button
               onclick="saveToImage();"
+              id="btnSave"
               class="btn btn-warning btn-lg btn-block"
               style="margin-right: 20px;margin: 5px;"
             >
               ถัดไป
             </button>
           </div>
-
-          <!-- test -->
-          <div class="row">
-            <button
-              id="btnSave"
-              class="btn btn-danger btn-lg btn-block"
-              style="margin-right: 20px;margin: 5px;"
-            >
-              บันทึก
-            </button>
-          </div>
-          <!--  -->
         </div>
       </div>
     </div>
@@ -147,12 +138,14 @@
                 // Convert and download as image 
                 // Canvas2Image.saveAsPNG(canvas); 
                 $("#img-out").append(canvas);
-                console.log(canvas.toDataURL());
+                // console.log(canvas.toDataURL());
                 sessionStorage.setItem("base64canvas",canvas.toDataURL());
+              
                 // Clean up 
                 //document.body.removeChild(canvas);
             }
         });
+        goExperimentTwo();
     });
 }); 
     </script>

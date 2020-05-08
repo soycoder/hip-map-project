@@ -107,7 +107,7 @@ function doKeyMove(e) {
     isRoad = true
     let sign = map[y_in_map][x_in_map];
     if ( sign != '*' && sign != '-') {
-      console.log(sign,parseInt(sign));
+      // console.log(sign,parseInt(sign));
       discovered.add(parseInt(sign));
     }
   }
@@ -129,7 +129,7 @@ function doKeyMove(e) {
     isRoad = true
     let sign = map[y_in_map][x_in_map];
     if ( sign != '*' && sign != '-') {
-      console.log(sign,parseInt(sign));
+      // console.log(sign,parseInt(sign));
       discovered.add(parseInt(sign));
     }
   }
@@ -151,7 +151,7 @@ function doKeyMove(e) {
     isRoad = true
     let sign = map[y_in_map][x_in_map];
     if ( sign != '*' && sign != '-') {
-      console.log(sign,parseInt(sign));
+      // console.log(sign,parseInt(sign));
       discovered.add(parseInt(sign));
     }
   }
@@ -173,7 +173,7 @@ function doKeyMove(e) {
     isRoad = true
     let sign = map[y_in_map][x_in_map];
     if ( sign != '*' && sign != '-') {
-      console.log(sign,parseInt(sign));
+      // console.log(sign,parseInt(sign));
       discovered.add(parseInt(sign));
     }
   }
@@ -252,6 +252,7 @@ function getTimer(name) {
       clearInterval(downloadTimer);
       document.getElementById(name).classList.remove("hidden");
       document.getElementById("timer").classList.add("hidden");
+      document.getElementById("banner").classList.add("hidden");
       
     }
   }, 1000);

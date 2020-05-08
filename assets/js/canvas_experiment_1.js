@@ -68,9 +68,7 @@ function convertCanvasToImage(canvas) {
   image.src = canvas.toDataURL("image/png");
   return image;
 }
-function saveToImage() {
-  goExperimentTwo();
-}
+
 function goExperimentTwo() {
   localStorage.finishExperiment1 = Date();
   location.replace("experiment_2.html");

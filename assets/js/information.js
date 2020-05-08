@@ -12,6 +12,7 @@ function getTimer(name) {
       if (name === "info1") {
         document.getElementById("img-" + name).src =
           "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif";
+        localStorage.infoStart = Date();
         countDownInfo1();
       }
       document.getElementById(name).classList.remove("hidden");
@@ -21,6 +22,7 @@ function getTimer(name) {
 }
 
 function countDownInfo1() {
+  
   let ntimeleft2 = 45;
 
   var downloadTimer3 = setInterval(function () {

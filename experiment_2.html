@@ -47,53 +47,68 @@
     <div id="explanation_ex2">
       <div class="card text-center">
         <div class="card-body">
-          <h4 class="card-title">คำอธิบาย: การทดลองที่ 2</h4>
+          <h4 class="card-title">คำอธิบาย การทดสอบที่ 2</h4>
           <p class="card-text">
             <pre
               style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
-            1. ให้ผู้ร่วมการทดลอง กดปุ่มบน<span style="color: #ee0f0f;">คีย์บอร์ด W A S D</span> <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/pic-keyboard.png" height="60px" /> ในการบังคับรถยนต์ เพื่อ<b>เดินตามเส้นทาง</b> ที่ท่านได้จดจำเมื่อเริ่มการทดลอง
+            1. ให้ผู้ร่วมการทดสอบ กดปุ่มบน<span style="color: #ee0f0f;font-size: 18px;">คีย์บอร์ด W A S D</span> <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/pic-keyboard.png" height="60px" /> ในการบังคับรถยนต์ เพื่อ<b>เดินตามเส้นทาง</b> ที่คุณได้จดจำเมื่อเริ่มการทดสอบ
+                  หากคุณคิดว่าได้ <b>เดินทางมาถึงเป้าหมายแล้ว</b> (โดยใช้เส้นทางเดินเดียวกับตอนอธิบาย) กดปุ่ม ถึง จุดหมายแล้ว <span class="btn btn-warning">ถึง จุดหมายแล้ว</span>
                           <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex2-play.gif" height="280px" />
 
-              หากท่านคิดว่าได้ <b>เดินทางมาถึงเป้าหมายแล้ว</b> (โดยใช้เส้นทางเดินเดียวกับตอนอธิบาย) กดปุ่ม ถึง จุดหมายแล้ว <span class="btn btn-warning">ถึง จุดหมายแล้ว</span>
               
-              <b style="color: #ee0f0f;">*หมายเหตุ* </b> แรกเริ่ม ผู้ร่วมการทดลอง ต้องปฏิบัติ ตามรูป
+              
+              <b style="color: #ee0f0f;">*หมายเหตุ* </b> แรกเริ่ม ผู้ร่วมการทดสอบ ต้องปฏิบัติ ตามรูป
                           <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex2-init.gif" height="280px" />
             </pre>
             </>
         </div>
       </div>
       <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startEX2()">
-        เริ่ม การทดลอง
+        เริ่ม การทดสอบ
       </button>
     </div>
 
 
     <div id="ex2" class="hidden">
+      
       <img class="hidden" id="full-map" src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map_di.png" alt="full_map_di.png" width="1000"
         height="720" />
       <img class="hidden" id="AudiCar-A" src="assets/img/Topdown_vehicle_sprites_pack/Audi_A.png" />
       <img class="hidden" id="AudiCar-S" src="assets/img/Topdown_vehicle_sprites_pack/Audi_S.png" />
       <img class="hidden" id="AudiCar-W" src="assets/img/Topdown_vehicle_sprites_pack/Audi_W.png" />
       <img class="hidden" id="AudiCar-D" src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png" />
-      <div class="row container">
-        <div class="col-1"></div>
-        <div class="col-8">
-          <canvas width="1000" height="720" id="canvas_ex2" tabindex="0">
-            Canvas tag
-          </canvas></div>
-        <div class="col-2"></div>
+      <div class="container-fluid">
+        <div class="row " style="margin-top: 10px;">
+          <div class="col-8">
+            <canvas width="900" height="700" id="canvas_ex2" tabindex="0">
+              Canvas tag
+            </canvas></div>
+          <div class="col-3">
+            <div class="card" style="width: 300px;background-color: #f7e1b3;">
+              <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                <p style="font-size: 14px;margin-bottom: 0;"><li>เริ่มต้นด้วยการกดปุ่ม <img style="height: 50px;" src="assets/img/expain/key_tab.png" /> 1 ครั้ง 
+                  จะปรากฏเส้นกรอบ บริเวณขอบของแผนที่ </li>
+                  <li>จากนั้น กดปุ่ม <img style="height: 40px;" src="assets/img/expain/key_s.png" /> 1 ครั้ง  และจะมีรถแดง<img style="height: 50px;" src="assets/img/Topdown_vehicle_sprites_pack/Audi_D.png" />จะปรากฎบนแผนที่
+                </p>
+              </div>
+            </div>
+            <br/>
 
+          <div class="card" style="width: 300px;background-color: #f7e1b3;">
+            <button  class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#myModal"
+            onclick="saveData()">
+            ถึง จุดหมายแล้ว
+            </button>
+            
+          </div>
+        </div>
+        </div> 
       </div>
-      <div class="container">
-        <button class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#myModal"
-          onclick="saveData()">
-          ถึง จุดหมายแล้ว
-        </button>
-      </div>
+      
     </div>
     <div id="timer" class="hidden" style="
           text-align: center;
-          margin-top: 50px;
+          margin-top: 250px;
           font-size: 60px;
           color: #ee0f0f;
         ">
@@ -108,7 +123,7 @@
           <!-- Modal Header -->
           <div class="modal-header">
             <h3 class="modal-title">สถานะการบันทึกข้อมูล</h3>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           </div>
 
           <!-- Modal body -->

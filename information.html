@@ -1,263 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Information</title>
-    <!-- CSS File -->
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" /> -->
-    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
 
-    <!-- JS File -->
-    <!-- Auth - -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <script src="assets/js/auth.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information</title>
+  <!-- CSS File -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" /> -->
+  <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  <!-- JS File -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 
-      gtag("config", "UA-162480253-2");
-    </script>
-    <!-- JS File -->
-    <script src="assets/js/information.js"></script>
-  </head>
-  <body onload="profile()">
-    <div class="container-fluid">
-      <div style="background-color: #f7b633;">
-        <div class="mx-auto" style="width: 700px; font-size: 35px;">
-          CS285: Human Information Processing
-        </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-162480253-2");
+  </script>
+  <!-- JS File -->
+  <script src="assets/js/information.js"></script>
+</head>
+
+<body onload="profile()">
+  <div class="container-fluid">
+    <div style="background-color: #f7b633;">
+      <div class="mx-auto" style="width: 700px; font-size: 35px;">
+        CS285: Human Information Processing
       </div>
-      <span
-        id="profile1"
-        class="badge badge-pill badge-secondary"
-        style="font-size: 20px; float: right; margin-top: 5px;"
-      >
-      </span>
     </div>
-    <br />
-    <br />
+    <span id="profile1" class="badge badge-pill badge-secondary"
+      style="font-size: 20px; float: right; margin-top: 5px;">
+    </span>
+  </div>
+  <br />
+  <br />
 
-    <div class="container" id="mainInfo">
-      <div id="explanation">
-        <div class="card text-center">
-          <div class="card-body">
-            <h4 class="card-title">คำอธิบาย</h4>
-            <p class="card-text">
-              <pre style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
-        1. เมื่อเริ่ม ระบบจะทำการสร้างแผนที่เมืองขึ้นมาโดยมีสถานที่ต่าง ๆ และถนน
-        2. ให้ผู้ร่วมการทดลอง<span style="color: #ee0f0f;">จดจำเส้นทางตามการอธิบาย</span>จากจุดเริ่มต้น(Start) ไปจนถึงจุดปลายทาง(Finish) ตามที่การอธิบายให้ได้มากที่สุด
-                  2.1. รูปแบบการอธิบาย นั้นจะ <span style="color: #ee0f0f;">แตกต่างกัน</span>ออกไปในแต่ละคน ซึ่งแต่ละคนจะได้รับเพียงแค่ 1 รูปแบบการอธิบายเท่านั้น 
-
-                        รูปแบบการอธิบาย แบ่งเป็น 2 รูปแบบการอธิบาย คือ
-                              <b>1) แบบแอนิเมชั่น</b> - ผู้ร่วมการทดลอง ต้องเตรียมตัวให้พร้อม แอนิเมชั่นจะเล่นอัตโนมัติ โดยมีสัญญาณบอกเริ่ม
-                                <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/pre-animate.gif" height="90px" />
-
-                              <b>2) แบบบรรยายด้วยเสียง</b> - ผู้ร่วมการทดลอง ต้องเปิดเสียงคอมพิวเตอร์ และ<b>กดปุ่มเริ่มด้วยตัวเอง</b>
-                                  ดูแผนที่ประกอบ
-                                <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/pic-map.png" height="90px" />
-                                <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/pic-audio.png" height="40px" />
-        
-        3. เมื่อการอธิบายเส้นทาง จบลง ระบบจะนับถอยหลังอีก 30 วินาที 
-        4. จากนั้น ระบบจะนำทางไป หน้าถัดไปอัตโนมัติ</pre>
-            </p>
-           
-          </div>
-        </div>
-        <button
-          class="btn btn-warning btn-lg btn-block"
-          id="getInfo"
-          onclick="startinfo()"
-        >
-          เริ่ม จดจำเส้นทางการเดินทาง
-        </button>
-      </div>
-      
-      <div id="info1" class="hidden">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col-8">
-            <div class="card">
-              <img
-                id="img-info1"
-                class="center"
-                src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif"
-                width="800px"
-              />
-              <!-- src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif" -->
-              <!-- https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png -->
+  <div class="container" id="mainInfo">
+    <div id="explanation" class="">
+      <div class="card text-center ">
+        <div class="card-body">
+          <h4 class="card-title">คำอธิบาย</h4>
+          <p class="card-text" id="info-each-group">
+            <div id="info-spinner">
+            <div  class="spinner-border text-warning center" style="width: 5rem; height: 5rem;font-size: 20px;">
             </div>
           </div>
-          <div class="col-3">
-            <div id="CountDown-animate" class="hidden">
-              <label
-                  id="lebelCountDown-animate"
-                  class="btn-danger"
-                  style="margin-left: 15px;padding: 5px 10px;"
-                >
-                นับถอยหลัง 30 s
+          </p>
+
+        </div>
+      </div>
+      <button class="btn btn-warning btn-lg btn-block" id="getInfo" onclick="startinfo()">
+        เริ่ม จดจำเส้นทางการเดินทาง
+      </button>
+    </div>
+
+    <div id="info1" class="hidden">
+      <div class="row" style="margin-left: 20px;">
+        <!-- <div class="col"></div> -->
+        <div class="col-8">
+          <div class="card">
+            <img id="img-info1" class="center"
+              src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png"
+              width="800px" />
+            <!-- src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif" -->
+            <!-- https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map.png -->
+          </div>
+        </div>
+        <div class="col-3">
+          <div id="btn-start-info1" class="">
+            <button
+            onclick="runInfo1();"
+            class="btn btn-secondary btn-lg btn-block"
+            style="margin-right: 20px;margin: 5px;background:#ececec;color: black;border: none;"
+            onMouseOver="this.style.background='#d1d1d1'"
+            onMouseOut="this.style.background='#ececec'"
+            >
+            เริ่ม แอนิเมชั่น
+          </button>
+          </div>
+          <div id="CountDown-animate" class="hidden">
+            <label id="lebelCountDown-animate" class="btn-danger" style="margin-left: 15px;padding: 5px 10px;">
+              นับถอยหลัง 30 s
               </lebel>
-            </div>
           </div>
         </div>
       </div>
-      
-      <div id="info2" class="hidden">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col-8">
-            <div class="card">
-              <img
-                src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map_di.png"
-                width="800px"
-                class="center"
-              />
-              <div class="row">
-                <div class="col">
-                  <div class="card-body" id="card-aud-land">
-                    <audio
-                      id="infoLandmark"
-                      class="center"
-                      src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_landmark.mp3"
-                      controls
-                    ></audio>
-                  </div>
-                </div>
+    </div>
+
+    <div id="info2" class="hidden">
+      <div class="row" style="margin-left: 20px;">
+        <!-- <div class="col"></div> -->
+        <div class="col-8">
+          <div class="card">
+            <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map_di.png"
+              width="800px" class="center" />
+
+          </div>
+        </div>
+        <div class="col-3">
+          <div id="CountDown-land" class="hidden">
+            <label id="lebelCountDown-land" class="btn-danger" style="margin-top: 22px;padding: 5px 10px;">
+              นับถอยหลัง 30 s
+              </lebel>
+          </div>
+          <!-- <div class="row">
+            <div class="col"> -->
+              <div class="card-body" id="card-aud-land">
+                <audio id="infoLandmark" class="center"
+                  src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_landmark.mp3"
+                  controls></audio>
               </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div id="CountDown-land" class="hidden">
-              <label
-                id="lebelCountDown-land"
-                class="btn-danger"
-                style="margin-top: 22px;padding: 5px 10px;"
-              >
-                นับถอยหลัง 30 s
-              </lebel>
-            </div>
-          </div>
+            <!-- </div>
+          </div> -->
         </div>
       </div>
-      
-      <div id="info3" class="hidden">
-        <div class="row">
-          <div class="col"></div>
-          <div class="col-8">
-            <div class="card">
-              <img
-                src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map_di.png"
-                width="800px"
-                class="center"
-              />
-              <div class="row">
-                <div class="col">
-                  <div class="card-body" id="card-aud-di">
-                    <audio
-                      id="infoDirection"
-                      class="center"
-                      src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_direction.mp3"
-                      controls
-                    ></audio>
-                  </div>
-                </div>
+    </div>
+
+    <div id="info3" class="hidden">
+      <div class="row" style="margin-left: 20px;">
+        <!-- <div class="col"></div> -->
+        <div class="col-8">
+          <div class="card">
+            <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/full_map_di.png"
+              width="800px" class="center" />
+            
+          </div>
+        </div>
+        <div class="col-3">
+          <!-- <div class="row">
+            <div class="col"> -->
+              <div class="card-body" id="card-aud-di">
+                <audio id="infoDirection" class="center"
+                  src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/sound/info_voice_direction.mp3"
+                  controls></audio>
               </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div id="CountDown-di" class="hidden">
-              <label
-                id="lebelCountDown-di"
-                class="btn-danger"
-                style="margin-top: 22px;padding: 5px 10px;"
-              >
-                นับถอยหลัง 30 s
+            <!-- </div>
+          </div> -->
+          <div id="CountDown-di" class="hidden">
+            <label id="lebelCountDown-di" class="btn-danger" style="margin-top: 22px;padding: 5px 10px;">
+              นับถอยหลัง 30 s
               </lebel>
-            </div>
           </div>
         </div>
       </div>
-      <div
-        id="timer"
-        class="hidden"
-        style="
+    </div>
+    <div id="timer" class="hidden" style="
           text-align: center;
-          margin-top: 50px;
+          margin-top: 250px;
           font-size: 60px;
           color: #ee0f0f;
-        "
-      >
-        <span id="countdowntimer">5 </span>
-      </div>
+        ">
+      <span id="countdowntimer">5 </span>
     </div>
-    <script type="text/javascript">
-      // Card
-      var cardLand = document.getElementById("card-aud-land");
-      var cardDi = document.getElementById("card-aud-di");
+  </div>
+  <script type="text/javascript">
+    // Card
+    var cardLand = document.getElementById("card-aud-land");
+    var cardDi = document.getElementById("card-aud-di");
 
-      // Audio
-      var audLand = document.getElementById("infoLandmark");
-      var audDi = document.getElementById("infoDirection");
+    // Audio
+    var audLand = document.getElementById("infoLandmark");
+    var audDi = document.getElementById("infoDirection");
 
-      // Animate
-      // var animate = document.getElementById("info");
-      
+    // Animate
+    // var animate = document.getElementById("info");
 
-      audLand.addEventListener("play", function () {
-        localStorage.infoStart = Date();
-        cardLand.classList.add("hidden");
-      });
-      audDi.addEventListener("play", function () {
-        localStorage.infoStart = Date();
-        cardDi.classList.add("hidden");
-      });
 
-      audLand.addEventListener("ended", function () {
+    audLand.addEventListener("play", function () {
+      localStorage.infoStart = Date();
+      cardLand.classList.add("hidden");
+    });
+    audDi.addEventListener("play", function () {
+      localStorage.infoStart = Date();
+      cardDi.classList.add("hidden");
+    });
 
-        document.getElementById("CountDown-land").classList.remove("hidden");
-        countDownGotoNext("CountDown-land");
-      });
-      audDi.addEventListener("ended", function () {
+    audLand.addEventListener("ended", function () {
 
-        document.getElementById("CountDown-di").classList.remove("hidden");
-        countDownGotoNext("CountDown-di");
-      });
+      document.getElementById("CountDown-land").classList.remove("hidden");
+      countDownGotoNext("CountDown-land");
+    });
+    audDi.addEventListener("ended", function () {
 
-      function countDownGotoNext(lebelid) {
+      document.getElementById("CountDown-di").classList.remove("hidden");
+      countDownGotoNext("CountDown-di");
+    });
 
-        var ntimeleft2 = 30;
-        document.getElementById(lebelid).classList.remove("hidden");
-        var downloadTimer2 = setInterval(function () {
+    function countDownGotoNext(lebelid) {
+
+      var ntimeleft2 = 30;
+      document.getElementById(lebelid).classList.remove("hidden");
+      var downloadTimer2 = setInterval(function () {
         ntimeleft2--;
         // console.log(ntimeleft2);
-          
-        document.getElementById("lebel"+lebelid).textContent = `นับถอยหลัง ${ntimeleft2} s ไปหน้าถัดไป.`;
-          if (ntimeleft2 <= 0) {
-            clearInterval(downloadTimer2);
-            localStorage.infoFinish = Date();
-            goExperimentOne();
-          }
-        }, 1000);
-      }
-      
-    </script>
-  </body>
+
+        document.getElementById("lebel" + lebelid).textContent = `นับถอยหลัง ${ntimeleft2} s ไปหน้าถัดไป.`;
+        if (ntimeleft2 <= 0) {
+          clearInterval(downloadTimer2);
+          localStorage.infoFinish = Date();
+          goExperimentOne();
+        }
+      }, 1000);
+    }
+
+  </script>
+</body>
+
 </html>

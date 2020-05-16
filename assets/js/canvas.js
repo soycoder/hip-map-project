@@ -55,8 +55,8 @@ var car_S = document.getElementById("AudiCar-S");
 var car_W = document.getElementById("AudiCar-W");
 var car_D = document.getElementById("AudiCar-D");
 
-var map_axis_x = 1000;
-var map_axis_y = 720;
+var map_axis_x = 900;
+var map_axis_y = 700;
 var map_x_channel = 50;
 var map_y_channel = 37;
 var tiles_x = map_axis_x / map_x_channel;
@@ -72,7 +72,7 @@ var lastkey = '-';
 var discovered = new Set();
 function doKeyMove(e) {
   drawMaps();
-  canvas_context.fillStyle = "#FF0000";
+  // canvas_context.fillStyle = "#FF0000";
   let x_in_map = 0;
   if(((x/tiles_x)*10)%10 > 5)
     x_in_map = parseInt(x/tiles_x)+1;

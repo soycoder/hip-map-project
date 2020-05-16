@@ -54,15 +54,16 @@
       <div id="explanation_ex1">
         <div class="card text-center">
           <div class="card-body">
-            <h4 class="card-title">คำอธิบาย: การทดลองที่ 1</h4>
+            <h4 class="card-title">คำอธิบาย การทดสอบที่ 1</h4>
             <p class="card-text">
               <pre style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
-              1. ให้ผู้ร่วมการทดลอง ใช้<b><span style="color: #ee0f0f;">เมาส์</span></b> <b>วงกลม</b> สถานที่ ที่หายไป หรือ ย้ายตำแหน่ง จากแผนที่ ที่ให้จดจำเส้นทางในตอนเริ่มต้น
-                  หากท่านคิดว่า <b>วงกลมครบทุกจุด</b> แล้ว กดปุ่ม ถัดไป <span class="btn btn-warning "style="margin-right: 20px;margin: 5px;"> ถัดไป </span>   
-                              <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex1-draw.gif" height="280px" />
+          1. ให้ผู้ร่วมการทดสอบ ใช้ <b><span style="color: #ee0f0f;font-size: 20px;">เมาส์</span></b> เพื่อวาด <b>วงกลม</b> บนภาพ ตรงตำแหน่งสถานที่ที่หายไป หรือ มีการย้ายตำแหน่ง 
+          จากแผนที่ที่ให้จดจำเส้นทางในตอนเริ่มต้น
+                  - หากท่านคิดว่า <b>วงกลมครบทุกจุด</b> แล้ว กดปุ่ม ถัดไป <span class="btn btn-warning "style="margin-right: 20px;margin: 5px;"> ถัดไป </span>   
+                              <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex1-draw.gif" height="240px" />
 
-                  หาก <b>ต้องการแก้ไข</b> กดปุ่ม วาดใหม่ <span class="btn btn-secondary "style="margin-right: 20px;"> วาดใหม่ </span>
-                              <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex1-re.gif" height="280px" /></pre>
+                  - หาก <b>ต้องการแก้ไข</b> กดปุ่ม วาดใหม่ <span class="btn btn-secondary "style="margin-right: 20px;"> วาดใหม่ </span>
+                              <img src="https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/expain/ex1-re.gif" height="240px" /></pre>
             </p>
           </div>
         </div>
@@ -71,47 +72,55 @@
           id="getInfo"
           onclick="startEX1()"
         >
-          เริ่ม การทดลอง
+          เริ่ม การทดสอบ
         </button>
       </div>
     </div>
 
     <div class="container-fluid hidden" id="ex1" >
-      <div class="row">
-        <div class="col-9">
-          <div id="canvas-ex1" class="center" style="max-width: 1000px;">
+      <div class="row" style="margin-left: 20px;">
+        <div class="col-8">
+          <div id="canvas-ex1" class="center" style="max-width: 800px;">
             <img
               class="hidden"
               id="full_map_ex1"
               src="assets/img/full_map_ex1_di.png"
               alt="full_map_ex1.png"
             />
-            <canvas width="900px" height="650px" id="myCanvas_ex1" tabindex="0">
+            <canvas width="800px" height="600px" id="myCanvas_ex1" tabindex="0">
               Experiment 1
             </canvas>
           </div>
         </div>
-        <div class="col"></div>
-        <div class="col-2">
-          <div class="row">
-            <button
-              onclick="clearArea();"
-              class="btn btn-secondary btn-lg btn-block"
-              style="margin-right: 20px;margin: 5px;"
-            >
-              วาดใหม่
-            </button>
-          </div>
-          <div class="row">
-            <button
+        
+        <div class="col-3">
+            
+            <div class="card" style="width: 280px;background-color: #e0e0e0;">
+              <button
+                  onclick="clearArea();"
+                  class="btn btn-secondary btn-lg btn-block"
+                >
+                วาดใหม่
+                </button>
+              <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                <p style="font-size: 14px;margin-bottom: 0;">เมื่อคุณต้องการ <b>แก้ไขหรือลบ</b> เส้นที่คุณวาดไป</p>
+              </div>
               
-              id="btnSave"
-              class="btn btn-warning btn-lg btn-block"
-              style="margin-right: 20px;margin: 5px;"
-            >
-              ถัดไป
-            </button>
-          </div>
+            </div>
+            <br/>
+            <div class="card" style="width: 280px;background-color: #f7e1b3;">
+              <button
+                id="btnSave"
+                class="btn btn-warning btn-lg btn-block"
+              >
+                ถัดไป
+              </button>
+              <div class="card-body" style="padding-top: 5px;padding-bottom: 5px;">
+                <p style="font-size: 14px;margin-bottom: 0;">เมื่อคุณ <b>วาดวงกลมครบแล้ว</b> ให้กดปุ่มถัดไป</p>
+              </div>
+            </div>
+          
+          
         </div>
       </div>
     </div>
@@ -120,7 +129,7 @@
       class="hidden"
       style="
         text-align: center;
-        margin-top: 50px;
+        margin-top: 250px;
         font-size: 60px;
         color: #ee0f0f;
       "
@@ -128,6 +137,7 @@
       <span id="countdowntimer">5 </span>
     </div>
     <div id="img-out"></div>
+    
     <script> 
     $(function() { 
     $("#btnSave").click(function() { 

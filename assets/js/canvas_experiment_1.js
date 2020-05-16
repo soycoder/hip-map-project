@@ -12,6 +12,7 @@ function InitThis() {
   ctx = document.getElementById("myCanvas_ex1").getContext("2d");
   var _map = document.getElementById("full_map_ex1");
   ctx.drawImage(_map, 0, 0, ctx.canvas.width, ctx.canvas.height);
+
   $("#myCanvas_ex1").mousedown(function (e) {
     mousePressed = true;
     Draw(
@@ -31,6 +32,7 @@ function InitThis() {
     }
   });
 
+  
   $("#myCanvas_ex1").mouseup(function (e) {
     mousePressed = false;
   });
@@ -86,6 +88,8 @@ function getTimer(name) {
       clearInterval(downloadTimer);
       document.getElementById(name).classList.remove("hidden");
       document.getElementById("timer").classList.add("hidden");
+      alert("คุณสามารถ วาดวงกลมบนภาพแผนที่ได้เลย");
     }
   }, 1000);
+  
 }

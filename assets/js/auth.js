@@ -50,23 +50,3 @@ function loading() {
   <span class="sr-only">Loading...</span>`;
 }
 
-function profile() {
-  // console.log(localStorage.type);
-  if (localStorage.type == "student") {
-    document.getElementById("profile1").innerHTML =
-      localStorage.stuID +
-      " | " +
-      localStorage.displayname_th +
-      " | " +
-      localStorage.faculty;
-  }
-  if (localStorage.type == "admin") {
-    document.getElementById("profile1").innerHTML =
-      localStorage.stuID +
-      " | " +
-      localStorage.group +
-      ' | '
-      localStorage.faculty ;
-      
-  }
-}

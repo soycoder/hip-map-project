@@ -1,114 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>HIP : Project testing</title>
-    <!-- CSS File -->
-    <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    
-    <!-- JS File -->
-                <!-- Auth - -->
-                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-                <script src="assets/js/auth.js" ></script>
 
-                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-                <!-- Global site tag (gtag.js) - Google Analytics -->
-                <script
-                  async
-                  src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"
-                ></script>
-                <script>
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag() {
-                    dataLayer.push(arguments);
-                  }
-                  gtag("js", new Date());
+<head>
+  <title>HIP : Project testing</title>
+  <!-- CSS File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/Style.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-                  gtag("config", "UA-162480253-2");
-                </script>
-    </head>
+  <!-- JS File -->
+  <!-- Auth - -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="assets/js/auth.js"></script>
 
-  <body>
-    <div class="container-fluid">
-      <div style="background-color: #f7b633;">
-        <div class="mx-auto" style="width: 700px; font-size: 35px;">
-          CS285: Human Information Processing
-        </div>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-162480253-2");
+  </script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div style="background-color: #f7b633;">
+      <div class="mx-auto" style="width: 700px; font-size: 35px;">
+        CS285: Human Information Processing
       </div>
     </div>
-    <br />
-    
-    <div class="container" style="width: 720px;">
-      <div class="card" style="background-color: lemonchiffon;">
-        <div class="card-body" >
+  </div>
+  <br />
+  <div class="container-fluid">
+    <h4 class="card-title text-center">การศึกษาการประมวลผลมนุษย์เกี่ยวกับแผนที่<br />(Cognitive Map Code)
+    </h4>
+  </div>
+  <br/>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+      <div class="card" style="background-color: rgb(255, 233, 205);">
+        <div class="card-body">
           <h4 class="card-title text-center">คำชี้แจง</h4>
           <p class="card-text">
-            <pre style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;">
-      การทดลองนี้ เป็นส่วนหนึ่งในรายวิชา การประมวลสารสนเทศของมนุษย์ (CS285: HUMAN INFORMATION 
-PROCESSING) เกี่ยวกับการจดจำแผนที่ เท่านั้น
-      ผลการทดลอง <b><u>ไม่ได้</u></b> บ่งชี้ถึงสติปัญญาของผู้ร่วมการทดลอง ดังนั้นจึงขอรบกวนทำการทดลองให้เป็นปกติ
-และธรรมชาติ โดยไม่ใช้เครื่องมือใด ๆ เพื่อเป็นการช่วยเหลือ
-      ข้อมูลจากการทดลอง จะเก็บความลับและ<b> <u>ไม่เผยแพร่</u> </b>ต่อสาธารณชน แต่อย่างใด
-      <b><u>ระยะเวลาการทดลอง</u></b> ประมาณ 5-10 นาที</pre>
-              
-          </p>
+          การศึกษานี้เป็นการศึกษาเกี่ยวกับธรรมชาติการประมวลผลของมนุษย์เกี่ยวกับแผนที่และการเดินทาง<br/><br/>
+          ผลการทดลองจะถูกนำไปวิเคราะห์โดยภาพรวม ดังนั้นจึงขอรบกวนทำการทดลองให้เป็นปกติ และธรรมชาติ
+          โดยไม่ใช้เครื่องมือใด ๆ เพื่อเป็นการช่วยเหลือ<br/><br/>
+          ข้อมูลจากการทดลอง จะเก็บความลับและไม่เผยแพร่ต่อสาธารณชน แต่อย่างใด<br /><br />
+          <u>ระยะเวลาการทดลอง</u> ประมาณ 5-10 นาที
+            </p>
         </div>
       </div>
     </div>
-    <br />
-    
-    <div class="container">
-      <!-- <div class="card text-center">
+
+    <div class="col">
+      <div class="card">
         <div class="card-body">
-          <h4 class="card-title">เข้าสู่ระบบ</h4>
-          <p class="card-text">ใช้รหัสผ่านด้วย TU-WIFI</p>
+          <form>
+            <h4 class="card-title text-center">เข้าสู่ระบบ </h4>
+            <div class="text-center">
+            <label class="text-center" style="font-size: 15px;">สำหรับนักศึกษา เท่านั้น ใช้รหัสเดียวกันกับ reg.tu</label>
+            </div>
+            <div class="form-group">
+              <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
+              <input type="text" class="form-control" id="InputStudentID" aria-describedby="StudentIDHelp" required
+                style="font-size: 18px;" />
+              <small id="StudentIDHelp" class="form-text text-muted">ป้อนรหัสนักศึกษา</small>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
+              <input type="password" class="form-control" id="InputPassword1" required style="font-size: 18px;" />
+            </div>
         </div>
-      </div> -->
-      <div class="row">
-        <div class="col"></div>
-        <div class="col-6">
-            <div class="card">
-              <div class="card-body">
-                <form>
-                  <h4 class="card-title text-center">เข้าสู่ระบบ</h4>
-                  <div class="form-group">
-                    <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="InputStudentID"
-                      aria-describedby="StudentIDHelp"
-                      required
-                      style="font-size: 18px;"
-                    />
-                    <small id="StudentIDHelp" class="form-text text-muted"
-                      >ป้อนรหัสนักศึกษา</small
-                    >
-                  </div>
-                  <div class="form-group">
-                    <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="InputPassword1"
-                      required
-                      style="font-size: 18px;"
-                    />
-                  </div>
-                  </div>
-                  <button type="button" id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
-                    เข้าสู่ระบบ
-                  </button>
-                </form>
-              </div>
-        </div>
-      <div class="col"></div>
+        <button type="button" id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
+          เข้าสู่ระบบ
+        </button>
+        </form>
+      </div>
     </div>
-    
-  </body>
+  </div>
+</body>
 </html>

@@ -30,7 +30,7 @@ function runInfo1() {
 }
 function countDownInfo1() {
 
-  let ntimeleft2 = 54;
+  let ntimeleft2 = 55;
 
   var downloadTimer3 = setInterval(function () {
     ntimeleft2--;
@@ -56,12 +56,14 @@ function startinfo() {
     case 1:
       document.getElementById("explanation").classList.add("hidden");
       // localStorage.group = "landmark";
+      alert("กรุณา เปิดเสียงลำโพง ด้วยครับ.");
       getTimer("info2");
       break;
     case 2:
       document.getElementById("explanation").classList.add("hidden");
       // localStorage.group = "direction";
       getTimer("info3");
+      alert("กรุณา เปิดเสียงลำโพง ด้วยครับ.");
       break;
     default:
       break;

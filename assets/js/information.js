@@ -30,7 +30,7 @@ function runInfo1() {
 }
 function countDownInfo1() {
 
-  let ntimeleft2 = 55;
+  let ntimeleft2 = 58;
 
   var downloadTimer3 = setInterval(function () {
     ntimeleft2--;

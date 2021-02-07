@@ -19,23 +19,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script>
-  <script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162480253-2"></script> -->
+  <!-- <script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
 
     gtag("config", "UA-162480253-2");
-  </script>
+  </script> -->
 </head>
 
 <body>
   <div class="container-fluid">
     <div style="background-color: #f7b633;">
-      <div class="mx-auto" style="width: 700px; font-size: 35px;">
-        CS285: Human Information Processing
+      <div class="mx-auto text-center" style="width: 700px; font-size: 35px;">
+        Human Information Processing
       </div>
     </div>
   </div>
@@ -44,49 +45,92 @@
     <h4 class="card-title text-center">การศึกษาการประมวลผลมนุษย์เกี่ยวกับแผนที่<br />(Cognitive Map Code)
     </h4>
   </div>
-  <br/>
+  <br />
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-6">
-      <div class="card" style="background-color: rgb(255, 233, 205);">
-        <div class="card-body">
-          <h4 class="card-title text-center">คำชี้แจง</h4>
-          <p class="card-text">
-          การศึกษานี้เป็นการศึกษาเกี่ยวกับธรรมชาติการประมวลผลของมนุษย์เกี่ยวกับแผนที่และการเดินทาง<br/><br/>
-          ผลการทดลองจะถูกนำไปวิเคราะห์โดยภาพรวม ดังนั้นจึงขอรบกวนทำการทดลองให้เป็นปกติ และธรรมชาติ
-          โดยไม่ใช้เครื่องมือใด ๆ เพื่อเป็นการช่วยเหลือ<br/><br/>
-          ข้อมูลจากการทดลอง จะเก็บความลับและไม่เผยแพร่ต่อสาธารณชน แต่อย่างใด<br /><br />
-          <u>ระยะเวลาการทดลอง</u> ประมาณ 5-10 นาที
+    <div class="row">
+      <div class="col-6">
+        <div class="card" style="background-color: rgb(255, 233, 205);">
+          <div class="card-body">
+            <h4 class="card-title text-center">คำชี้แจง</h4>
+            <p class="card-text">
+              การศึกษานี้เป็นการศึกษาเกี่ยวกับธรรมชาติการประมวลผลของมนุษย์เกี่ยวกับแผนที่และการเดินทาง<br /><br />
+              ผลการทดลองจะถูกนำไปวิเคราะห์โดยภาพรวม ดังนั้นจึงขอรบกวนทำการทดลองให้เป็นปกติ และธรรมชาติ
+              โดยไม่ใช้เครื่องมือใด ๆ เพื่อเป็นการช่วยเหลือ<br /><br />
+              ข้อมูลจากการทดลอง จะเก็บความลับและไม่เผยแพร่ต่อสาธารณชน แต่อย่างใด<br /><br />
+              <u>ระยะเวลาการทดลอง</u> ประมาณ 5-10 นาที
             </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <form>
-            <h4 class="card-title text-center">เข้าสู่ระบบ </h4>
-            <div class="text-center">
-            <label class="text-center" style="font-size: 15px;">สำหรับนักศึกษา เท่านั้น ใช้รหัสเดียวกันกับ reg.tu</label>
-            </div>
-            <div class="form-group">
-              <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
-              <input type="text" class="form-control" id="InputStudentID" aria-describedby="StudentIDHelp" required
-                style="font-size: 18px;" />
-              <small id="StudentIDHelp" class="form-text text-muted">ป้อนรหัสนักศึกษา</small>
-            </div>
-            <div class="form-group">
-              <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
-              <input type="password" class="form-control" id="InputPassword1" required style="font-size: 18px;" />
-            </div>
+      <div class="col">
+        <!-- card #1 -->
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <h4 class="card-title text-center">เข้าสู่ระบบ </h4>
+              <div class="text-center">
+                <label class="text-center" style="font-size: 15px;">สำหรับนักศึกษา มธ. เท่านั้น ใช้รหัสเดียวกันกับ
+                  reg.tu</label>
+              </div>
+              <div class="form-group">
+                <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
+                <input type="text" class="form-control" id="InputStudentID" aria-describedby="StudentIDHelp" required
+                  style="font-size: 18px;" />
+                <small id="StudentIDHelp" class="form-text text-muted">ป้อนรหัสนักศึกษา</small>
+              </div>
+              <div class="form-group">
+                <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
+                <input type="password" class="form-control" id="InputPassword1" required style="font-size: 18px;" />
+              </div>
+          </div>
+          <button id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
+            เข้าสู่ระบบ
+          </button>
+          </form>
         </div>
-        <button type="button" id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
-          เข้าสู่ระบบ
-        </button>
-        </form>
+
+        <br>
+        <!-- card #2 -->
+        <!-- <div class="card">
+          <div class="card-body">
+            <form>
+              <h4 class="card-title text-center">เข้าสู่ระบบ </h4>
+              <div class="form-group">
+                <label for="InputStudentID2" style="font-size: 20px;">รหัสนักศึกษา</label>
+                <input type="text" class="form-control" id="InputStudentID2" aria-describedby="StudentIDHelp" required
+                  style="font-size: 18px;" />
+                <small id="StudentIDHelp" class="form-text text-muted">ป้อนรหัสนักศึกษา</small>
+              </div>
+
+              <div class="form-group">
+                <label for="InputGender" style="font-size: 20px;">เพศ</label>
+                <select id="gender" class="form-select">
+                  <option selected>กรุณาเลือก</option>
+                  <option value="1">ชาย</option>
+                  <option value="2">หญิง</option>
+                  <option value="3">ไม่ระบุ</option>
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="InputDepartment" style="font-size: 20px;">สาขา</label>
+                <input type="text" class="form-control" id="InputDepartment" aria-describedby="DepartmentHelp" required
+                  placeholder="ตัวอย่าง วิทยาการคอมพิวเตอร์" style="font-size: 18px;" />
+
+              </div>
+
+          </div>
+          <button id="login2" onclick="authOther()" class="btn btn-warning" style="font-size: 20px;">
+            เข้าสู่ระบบ
+          </button>
+          </form>
+        </div> -->
+
+
       </div>
     </div>
-  </div>
 </body>
+
 </html>

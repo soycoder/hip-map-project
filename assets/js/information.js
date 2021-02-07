@@ -9,12 +9,12 @@ function getTimer(name) {
     document.getElementById("countdowntimer").textContent = ntimeleft;
     if (ntimeleft <= 0) {
       clearInterval(downloadTimer);
-    //   if (name === "info1") {
-    //     document.getElementById("img-" + name).src =
-    //       "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif";
-    //     localStorage.infoStart = Date();
-    //     countDownInfo1();
-    //   }
+      //   if (name === "info1") {
+      //     document.getElementById("img-" + name).src =
+      //       "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif";
+      //     localStorage.infoStart = Date();
+      //     countDownInfo1();
+      //   }
       document.getElementById(name).classList.remove("hidden");
       document.getElementById("timer").classList.add("hidden");
     }
@@ -24,12 +24,11 @@ function runInfo1() {
   document.getElementById("btn-start-info1").classList.add("hidden");
 
   document.getElementById("img-info1").src =
-          "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif";
+    "https://raw.githubusercontent.com/soycoder/hip-map-project/master/assets/img/info/hip-map-animate-1080p.gif";
   localStorage.infoStart = Date();
   countDownInfo1();
 }
 function countDownInfo1() {
-
   let ntimeleft2 = 58;
 
   var downloadTimer3 = setInterval(function () {
@@ -45,7 +44,7 @@ function countDownInfo1() {
 }
 
 function startinfo() {
-  let digit = localStorage.stuID.charAt(8);
+  let digit = localStorage.stuID;
 
   switch (parseInt(digit) % 3) {
     case 0:
@@ -76,9 +75,9 @@ function goExperimentOne() {
 }
 
 function profile() {
-  var digit = localStorage.stuID.charAt(8);
+  var digit = localStorage.stuID;
   if (digit % 3 == 0) {
-  localStorage.group = "animate";
+    localStorage.group = "animate";
     document.getElementById("info-each-group").innerHTML = `
 <pre  style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
   1. เมื่อเริ่ม ระบบจะทำการสร้างแผนที่เมืองขึ้นมาโดยมีสถานที่ต่าง ๆ และถนน
@@ -92,10 +91,9 @@ function profile() {
   4. จากนั้น ระบบจะนำทางไป หน้าถัดไปอัตโนมัติ
   
   หมายเหตุ: แผนที่ที่จะเห็นต่อไปนี้ เป็นแผนที่สมมติขึ้นมาเพื่อการศึกษาครั้งนี้เท่านั้น</pre>`;
-  document.getElementById("info-spinner").classList.add("hidden");
-  }
-  else if (digit % 3 == 1) {
-  localStorage.group = "landmark";
+    document.getElementById("info-spinner").classList.add("hidden");
+  } else if (digit % 3 == 1) {
+    localStorage.group = "landmark";
     document.getElementById("info-each-group").innerHTML = `
   <pre  style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
   1. เมื่อเริ่ม ระบบจะทำการสร้างแผนที่เมืองขึ้นมาโดยมีสถานที่ต่าง ๆ และถนน
@@ -110,11 +108,10 @@ function profile() {
   4. จากนั้น ระบบจะนำทางไป หน้าถัดไปอัตโนมัติ
   
   หมายเหตุ: แผนที่ที่จะเห็นต่อไปนี้ เป็นแผนที่สมมติขึ้นมาเพื่อการศึกษาครั้งนี้เท่านั้น</pre>`;
-  document.getElementById("info-spinner").classList.add("hidden");
-  }
-  else if (digit % 3 == 2) {
-  localStorage.group = "direction";
-  document.getElementById("info-each-group").innerHTML = `
+    document.getElementById("info-spinner").classList.add("hidden");
+  } else if (digit % 3 == 2) {
+    localStorage.group = "direction";
+    document.getElementById("info-each-group").innerHTML = `
   <pre  style="font-family: KrungthaiFast-Regular, sans-serif;font-size:15px;margin-bottom: 0;text-align: left;">
   1. เมื่อเริ่ม ระบบจะทำการสร้างแผนที่เมืองขึ้นมาโดยมีสถานที่ต่าง ๆ และถนน
   2. ให้ผู้ร่วมการทดลอง<span style="color: #ee0f0f;">จดจำเส้นทางตามการอธิบาย</span>จากจุดเริ่มต้น(Start) ไปจนถึงจุดปลายทาง(Finish) ตามที่การอธิบายให้ได้มากที่สุด
@@ -128,7 +125,7 @@ function profile() {
   4. จากนั้น ระบบจะนำทางไป หน้าถัดไปอัตโนมัติ
   
   หมายเหตุ: แผนที่ที่จะเห็นต่อไปนี้ เป็นแผนที่สมมติขึ้นมาเพื่อการศึกษาครั้งนี้เท่านั้น</pre>`;
-  document.getElementById("info-spinner").classList.add("hidden");
+    document.getElementById("info-spinner").classList.add("hidden");
   }
   // console.log(localStorage.type);
   if (localStorage.type == "student") {
@@ -139,11 +136,13 @@ function profile() {
       " | " +
       localStorage.faculty;
   }
-  if (localStorage.type == "admin") {
+  if (
+    localStorage.type == "admin" ||
+    localStorage.type == "ชาย" ||
+    localStorage.type == "หญิง" ||
+    localStorage.type == "ไม่ระบุ"
+  ) {
     document.getElementById("profile1").innerHTML =
-      localStorage.stuID +
-      " | " +
-      localStorage.group;
-
+      localStorage.stuID + " | " + localStorage.group;
   }
 }

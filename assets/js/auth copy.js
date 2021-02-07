@@ -48,7 +48,40 @@ function authentication() {
   }
 }
 
+function checkGenderOption() {
+  let op = document.getElementById("gender").value;
 
+  console.log(op);
+  return op;
+  // if (true) {
+  //   let v = document.getElementById("male").value;
+  //   return v;
+  // } else if (document.getElementById("female").checked) {
+  //   let v = document.getElementById("female").value;
+  //   return v;
+  // } else if (document.getElementById("other").checked) {
+  //   let v = document.getElementById("other").value;
+  //   return v;
+  // }
+}
+
+function authOther() {
+  // e.preventDefault();
+  location.replace("thank.html");
+  let username = document.getElementById("InputStudentID2").value;
+  let department = document.getElementById("InputDepartment").value;
+  console.log(username + department);
+  if (username != "" && department != "") {
+    let gender = checkGenderOption();
+    localStorage.status = true;
+    localStorage.stuID = username;
+    localStorage.type = gender;
+    localStorage.displayname_th = username;
+    localStorage.faculty = department;
+    localStorage.group = "-";
+    
+  }
+}
 
 function loading() {
   document.getElementById(

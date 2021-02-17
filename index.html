@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HIP : Project testing</title>
   <!-- CSS File -->
   <link rel="stylesheet" type="text/css" href="assets/css/canvas.css" />
@@ -75,13 +78,13 @@
               </div>
               <div class="form-group">
                 <label for="InputStudentID" style="font-size: 20px;">รหัสนักศึกษา</label>
-                <input type="text" class="form-control" id="InputStudentID" aria-describedby="StudentIDHelp" required
+                <input type="text" autocomplete="off" class="form-control" id="InputStudentID" aria-describedby="StudentIDHelp" required
                   style="font-size: 18px;" />
                 <small id="StudentIDHelp" class="form-text text-muted">ป้อนรหัสนักศึกษา</small>
               </div>
               <div class="form-group">
                 <label for="InputPassword1" style="font-size: 20px;">รหัสผ่าน</label>
-                <input type="password" class="form-control" id="InputPassword1" required style="font-size: 18px;" />
+                <input type="password" autocomplete="off" class="form-control" id="InputPassword1" required style="font-size: 18px;" />
               </div>
           </div>
           <button id="login" onclick="authentication()" class="btn btn-warning" style="font-size: 20px;">
@@ -92,7 +95,7 @@
 
         <br>
         <!-- card #2 -->
-        <!-- <div class="card">
+        <div class="card">
           <div class="card-body">
             <form>
               <h4 class="card-title text-center">เข้าสู่ระบบ </h4>
@@ -122,11 +125,11 @@
               </div>
 
           </div>
-          <button id="login2" onclick="authOther()" class="btn btn-warning" style="font-size: 20px;">
+          <button id="login2" onclick="authenOther()" class="btn btn-warning" style="font-size: 20px;">
             เข้าสู่ระบบ
           </button>
           </form>
-        </div> -->
+        </div>
 
 
       </div>

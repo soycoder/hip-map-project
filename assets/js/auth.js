@@ -12,7 +12,6 @@ function authentication() {
 
     data["username"] = document.getElementById("InputStudentID").value;
     data["password"] = document.getElementById("InputPassword1").value;
-
     if (data["username"].substring(0, 5) == "admin") {
       localStorage.status = true;
       localStorage.stuID =
@@ -28,6 +27,7 @@ function authentication() {
         .post("https://auth-tu-api.herokuapp.com/api/auth", data)
         .then(function (res) {
           console.log(res.data);
+          debugger
           if (res.data.status === true) {
             localStorage.status = res.data.status;
             localStorage.stuID = data["username"];
@@ -43,12 +43,17 @@ function authentication() {
         })
         .catch(function (err) {
           console.log(err.message);
+          debugger
         });
     }
   }
 }
-
-
+function authenOther() {
+  let username = document.getElementById("InputStudentID2").value;
+  debugger;
+  console.log(username);
+  location.replace("information.html");
+}
 
 function loading() {
   document.getElementById(
